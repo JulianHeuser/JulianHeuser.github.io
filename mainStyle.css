@@ -169,7 +169,7 @@ h1{
 }
 
 /*Mobile support*/
-@media only screen and (max-aspect-ratio:1) {
+@media only screen and (orientation: portrait) {
 	.showcase{
 		display: table;
 		max-width: 100vw;
