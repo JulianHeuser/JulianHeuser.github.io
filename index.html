@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<title>Julian Heuser</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="stylesheet" type="text/css" href="mainStyle.css">
-
 <!-- Templates -->
 <template>
-
 		<div class = "img_container"><img></div>
 		<a href = "#subdivide"><div class = "showcase_text" id = "desc_subdivide">
 		<p class = "showcase_heading"></p>
 		<p class = "showcase_desc"></p>
 		</div></a>
-
 </template>
 
 <template>
 	<div class = "box_content">
 		<h2 class = "section_header"><span class = "section_textlabel"></span> <a class = "section_showmore">Show all</a></h2>
 		<div class = "showcase_row">
-
 		</div>
 	</div>
-
 </template>
 </head>
 
 <body>
-
+<!-- Header -->
 <div class = "outer">
 <div class = "wrapper">
 	<div class = "header"><h1>Julian Heuser</h1>
@@ -40,7 +34,7 @@
 			<a href = "https://www.moddb.com/members/sockman1">ModDB</a>
 		</span>
 	</div>
-
+<!-- About section -->
 	<div class = "box_outer">
 		<div class = "box_content">
 			<h2 class = "section_header">About</h2>
@@ -49,14 +43,16 @@
 	</div>
 
 	<div class = "box_empty"></div>
+<!-- Content (added by javascript) -->
 	<span id = "content"></span>
 
 </div>
 </div>
 
 <script>
-
-
+const filterParamName = "filter";
+const maxShowcasePerRow = 3;
+var urlParams = new URLSearchParams(window.location.search);
 
 //Stuff for mobile devices
 var clickElements = document.getElementsByClassName("img_container");
@@ -113,6 +109,13 @@ function deleteAllSections(){
 	document.getElementById("content").innerHTML = "";
 }
 
+function sectionClick(name){
+	window.history.pushState({}, "filter", name);
+	dealWithHash();
+}
+
+var lastSection = "";
+
 //Creates and displays a section from XML
 function displaySection(name, onlyImportant){
 	var section = xmlDoc.getElementsByTagName("root")[0].getElementsByTagName(name)[0];
@@ -135,18 +138,20 @@ function displaySection(name, onlyImportant){
 
 	var outerdiv = document.createElement("div");
 	outerdiv.className = "box_outer";
+	outerdiv.id = section.tagName;
 	var clone = temp_section.content.cloneNode(true);
 	outerdiv.appendChild(clone);
 	var innerContent = start.appendChild(outerdiv);
 	innerContent.getElementsByClassName("section_textlabel")[0].innerHTML = section.tagName;
 
-	if(window.location.hash.substring(1) == ""){
-		innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Show All";
-		innerContent.getElementsByClassName("section_showmore")[0].href = "#" + section.tagName;
+	if(urlParams.has(filterParamName)){
+		innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Back";
+		innerContent.getElementsByClassName("section_showmore")[0].addEventListener('click', function() { sectionClick("?"); }, false);
+		lastSection = section.tagName;
 	}
 	else{
-		innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Back";
-		innerContent.getElementsByClassName("section_showmore")[0].href = "#";
+		innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Show All";
+		innerContent.getElementsByClassName("section_showmore")[0].addEventListener('click', function() { sectionClick("?" + filterParamName +"=" + section.tagName); }, false);
 	}
 
 	var row = 0;
@@ -154,7 +159,7 @@ function displaySection(name, onlyImportant){
 	for(var k=0; k < showcase.length; k++) {
 		//Handle rows
 		row += 1;
-		if (row % 4 == 0){
+		if (row % (maxShowcasePerRow+1) == 0){
 			row = 0;
 			var div = document.createElement("div")
 			div.className = "showcase_row";
@@ -188,6 +193,20 @@ function displayAllSections(){
 	for(var i=0; i < sections.length; i++) {
 		displaySection(sections[i].tagName, true);
 	}
+	document.getElementById(lastSection).scrollIntoView();
+}
+
+//When the hash changes
+function dealWithHash(){
+	urlParams = new URLSearchParams(window.location.search);
+	deleteAllSections();
+	if(urlParams.has(filterParamName)){
+		var param = urlParams.get(filterParamName);
+		displaySection(param, false);
+	}
+	else{
+		displayAllSections();
+	}
 }
 
 //Called when the XML is ready
@@ -195,20 +214,10 @@ function xmlReady(xml, limit) {
   xmlDoc = xml.responseXML;
 	var sections = xmlDoc.getElementsByTagName("root")[0].children;
 	//Add elements to document
-	displayAllSections();
+	dealWithHash();
 	mobileQuery.addListener(mobileCheck);
 }
 
-//When the hash changes
-function dealWithHash(){
-	var hash = window.location.hash.substring(1);
-	deleteAllSections();
-	if(hash == ""){
-		displayAllSections();
-	}
-	displaySection(hash, false);
-}
-window.addEventListener("hashchange", dealWithHash);
 
 
 </script>
