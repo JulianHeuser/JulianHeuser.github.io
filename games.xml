@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<Games>
+
+	<showcase>
+		<title>Subdivide</title>
+		<desc>A game about dividing the world. Made during my senior year of high school</desc>
+		<img>https://steamcdn-a.akamaihd.net/steam/apps/1292070/header.jpg</img>
+		<link>#subdivide</link>
+	</showcase>
+	
+	<showcase>
+		<title>GravityRoll</title>
+		<desc>Made in 48 hours for the GMTK Game Jam 2018</desc>
+		<img>https://img.itch.zone/aW1hZ2UvMzAxMDI2LzE0NzE4MzMucG5n/315x250%23c/B4tvE9.png</img>
+		<link>#gravityroll</link>
+	</showcase>
+	
+	<showcase>
+		<title>Protect Him</title>
+		<desc>Made in 72 hours for Ludum Dare 43</desc>
+		<img>https://img.itch.zone/aW1nLzE2ODg0ODcucG5n/315x250%23c/S2nyqI.png</img>
+		<link>#protecthim</link>
+	</showcase>
+
+</Games>
+
+<Mods>
+
+	<showcase>
+		<title>Darkness</title>
+		<desc>A map created for the VR game Half-Life: Alyx</desc>
+		<img>images/Darkness.jpg</img>
+		<link>https://steamcommunity.com/sharedfiles/filedetails/?id=2259542281</link>
+	</showcase>
+	
+	<showcase>
+		<title>Half-Life: Top Down</title>
+		<desc>A Mod for the 1998 game Half-Life that turns the FPS into a top-down shooter</desc>
+		<img>https://media.moddb.com/images/downloads/1/176/175073/13191627071949897798_20190222151.png</img>
+		<link>https://www.moddb.com/mods/half-life-top-down</link>
+	</showcase>
+	
+	<showcase>
+		<title>Half-Life: Randomize</title>
+		<desc>A Mod for the 1998 game Half-Life that randomizes the placement of enemies, items, voice lines, and more</desc>
+		<img>https://media.moddb.com/cache/images/downloads/1/179/178119/thumb_620x2000/randomLogo.png</img>
+		<link>https://www.moddb.com/mods/half-life-randomizer</link>
+	</showcase>
+	
+	<showcase>
+		<title>Half-Life: Classic</title>
+		<desc>A Mod for the 1998 game Half-Life that randomizes the placement of enemies, items, voice lines, and more</desc>
+		<img>https://media.moddb.com/images/articles/1/247/246704/HL2ClassicLogo1.png</img>
+		<link>https://www.moddb.com/mods/half-life-2-classic</link>
+	</showcase>
+
+</Mods>
+
+<Music>
+
+	<showcase>
+		<title>Interspace</title>
+		<desc>An experimental track</desc>
+		<img>https://f4.bcbits.com/img/a1260707343_10.jpg</img>
+		<link>https://julianheuser.bandcamp.com/track/interspace</link>
+	</showcase>
+	
+	<showcase>
+		<title>Repeat</title>
+		<desc>An experimental track</desc>
+		<img>https://f4.bcbits.com/img/a2519377278_16.jpg</img>
+		<link>https://julianheuser.bandcamp.com/track/repeat</link>
+	</showcase>
+	
+	<showcase>
+		<title>SubDivide Soundtrack</title>
+		<desc>The soundtrack composed for my game, SubDivide</desc>
+		<img>https://f4.bcbits.com/img/a4029110159_16.jpg</img>
+		<link>https://julianheuser.bandcamp.com/album/subdivide-ost</link>
+	</showcase>
+	
+	<showcase>
+		<title>Waves</title>
+		<desc>An experimental track</desc>
+		<img>https://f4.bcbits.com/img/a2464860812_16.jpg</img>
+		<link>https://julianheuser.bandcamp.com/track/waves</link>
+	</showcase>
+
+</Music>
+</root>
