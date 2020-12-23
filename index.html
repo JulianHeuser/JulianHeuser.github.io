@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="mainStyle.css">
 <!-- Templates -->
 <template>
+		<div class = "shadow"></div>
 		<div class = "img_container"><img></div>
 		<a href = "#subdivide"><div class = "showcase_text" id = "desc_subdivide">
 		<p class = "showcase_heading"></p>
@@ -185,6 +186,10 @@ function displaySection(name, onlyImportant){
 	emptyDiv.className = "box_empty";
 	start.appendChild(emptyDiv);
 
+	if(section.tagName == lastSection){
+			document.getElementById(lastSection).scrollIntoView();
+	}
+
 	mobileCheck(mobileQuery);
 }
 
@@ -193,7 +198,9 @@ function displayAllSections(){
 	for(var i=0; i < sections.length; i++) {
 		displaySection(sections[i].tagName, true);
 	}
-	document.getElementById(lastSection).scrollIntoView();
+	if(lastSection != ""){
+		document.getElementById(lastSection).scrollIntoView();
+	}
 }
 
 //When the hash changes
