@@ -114,7 +114,7 @@ function deleteAllSections(){
 }
 
 //Creates and displays a section from XML
-function displaySection(name, rowLimit){
+function displaySection(name, onlyImportant){
 	var section = xmlDoc.getElementsByTagName("root")[0].getElementsByTagName(name)[0];
 
 	//Get showcase rows and template
@@ -125,7 +125,13 @@ function displaySection(name, rowLimit){
 
 
 	//Add elements to document
-	var showcase = section.getElementsByTagName("showcase");
+	var showcase;
+	if(onlyImportant){
+		var showcase = section.querySelectorAll("showcase_important");
+	}
+	else{
+		var showcase = section.querySelectorAll("showcase,showcase_important");
+	}
 
 	var outerdiv = document.createElement("div");
 	outerdiv.className = "box_outer";
@@ -134,23 +140,21 @@ function displaySection(name, rowLimit){
 	var innerContent = start.appendChild(outerdiv);
 	innerContent.getElementsByClassName("section_textlabel")[0].innerHTML = section.tagName;
 
-	innerContent.getElementsByClassName("section_showmore")[0].href = "#" + section.tagName;
-	//innerContent.getElementsByClassName("section_showmore")[0].addEventListener("click", function() {
-		//deleteAllSections();
-		//displaySection(section.tagName, 100);
-	//});
+	if(window.location.hash.substring(1) == ""){
+		innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Show All";
+		innerContent.getElementsByClassName("section_showmore")[0].href = "#" + section.tagName;
+	}
+	else{
+		innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Back";
+		innerContent.getElementsByClassName("section_showmore")[0].href = "#";
+	}
 
 	var row = 0;
-	var rowCount = 0;
 	var currentRow = innerContent.getElementsByClassName("showcase_row")[0];
 	for(var k=0; k < showcase.length; k++) {
 		//Handle rows
 		row += 1;
 		if (row % 4 == 0){
-			rowCount += 1;
-			if(rowCount >= rowLimit){
-				break;
-			}
 			row = 0;
 			var div = document.createElement("div")
 			div.className = "showcase_row";
@@ -179,19 +183,34 @@ function displaySection(name, rowLimit){
 	mobileCheck(mobileQuery);
 }
 
+function displayAllSections(){
+	var sections = xmlDoc.getElementsByTagName("root")[0].children;
+	for(var i=0; i < sections.length; i++) {
+		displaySection(sections[i].tagName, true);
+	}
+}
+
 //Called when the XML is ready
 function xmlReady(xml, limit) {
-    xmlDoc = xml.responseXML;
+  xmlDoc = xml.responseXML;
 	var sections = xmlDoc.getElementsByTagName("root")[0].children;
 	//Add elements to document
-	for(var i=0; i < sections.length; i++) {
-		displaySection(sections[i].tagName, 1);
-	}
+	displayAllSections();
 	mobileQuery.addListener(mobileCheck);
 }
 
+//When the hash changes
+function dealWithHash(){
+	var hash = window.location.hash.substring(1);
+	deleteAllSections();
+	if(hash == ""){
+		displayAllSections();
+	}
+	displaySection(hash, false);
+}
+window.addEventListener("hashchange", dealWithHash);
+
 
 </script>
-
 </body>
 </html>
