@@ -20,10 +20,11 @@ h1{
 
 .oldcontent{
 	overflow: hidden;
-	height: 100%;
 	width: 100%;
 	display: block;
-	transition: max-height .3s ease-out;
+	position: absolute;
+	transition: max-height .5s ease;
+	z-index: 10;
 }
 .oldcontent.anim{
 	max-height: 0 !important;
@@ -56,7 +57,6 @@ h1{
 	font-size: 20px;
 	font-weight: 400;
 }
-
 .links a{
 	color: white;
 }
@@ -79,8 +79,8 @@ h1{
 }
 
 .box_outer{
-		/*background-color: rgba(0, 0, 0, 0.5);*/
-		background-image: linear-gradient(to right, #1a8e99 , #062528);
+	/*background-color: rgba(0, 0, 0, 0.5);*/
+	background-image: linear-gradient(to right, #1a8e99 , #062528);
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -92,15 +92,11 @@ h1{
 	text-align: left;
 	opacity: 1;
 }
-
 .box_content a:link, .box_content a:visited, .box_content a:hover, .box_content a:active{
 	color: white;
 }
 
-
 .box_empty{
-	padding-top: 10px;
-	padding-bottom: 10px;
 	height: 100px;
 }
 
@@ -121,7 +117,6 @@ h1{
     top: 0px;
     right: 0px;
     bottom: 0px;
-
     -moz-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, .25);
     -webkit-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, .25);
 		box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, .25);
@@ -129,13 +124,23 @@ h1{
 		transition: .2s ease;
     pointer-events: none;
 }
+.showcase:hover .shadow{
+	-moz-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 1);
+	-webkit-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 1);
+	box-shadow: inset 0px 0px 40px 30px rgba(0, 0, 0, .5);
+}
 
 .showcase img{
 	position: absolute;
 	height: 100%;
+
+	width: 100%;
+	height: auto;
 	transition: .5s ease;
 }
-
+.showcase:hover img{
+	width: 110%;
+}
 
 .img_container{
 	position: relative;
@@ -161,27 +166,16 @@ h1{
 	transition: .2s ease;
 	z-index: 10;
 }
-
-.showcase_heading{
-	font-size: 1.5vw;
-}
-.showcase_desc{
-	font-size: 1vw;
-}
-
 .showcase:hover .showcase_text{
 	opacity: 1;
 }
 
-.showcase:hover .shadow{
-	-moz-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 1);
-	-webkit-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 1);
-	box-shadow: inset 0px 0px 40px 30px rgba(0, 0, 0, .5);
+.showcase_heading{
+	font-size: 1.5vw;
 }
 
-
-.showcase:hover img{
-	height: 110%;
+.showcase_desc{
+	font-size: 1vw;
 }
 
 .showcase_row{
@@ -242,14 +236,6 @@ h1{
 		height: 45vw;
 	}
 
-	.showcase img{
-		width: 100%;
-		height: auto;
-	}
-	.showcase:hover img{
-		width: 110%;
-		height: auto;
-	}
 
 	.box_content{
 		margin: 0;

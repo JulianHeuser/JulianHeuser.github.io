@@ -21,6 +21,17 @@
 		</div>
 	</div>
 </template>
+
+<!-- About section -->
+<template>
+	<div class = "box_outer">
+		<div class = "box_content">
+			<h2 class = "section_header">About</h2>
+			<p class = "description_text">I'm a current CS student interested in technology, art, and game design. I've worked on numerous programming projects in the past, both with groups and alone. </p>
+		</div>
+	</div>
+</template>
+
 </head>
 
 <body>
@@ -35,13 +46,6 @@
 			<a href = "https://www.moddb.com/members/sockman1">ModDB</a>
 		</span>
 	</div>
-<!-- About section -->
-	<div class = "box_outer">
-		<div class = "box_content">
-			<h2 class = "section_header">About</h2>
-			<p class = "description_text">I'm a current CS student interested in technology, art, and game design. I've worked on numerous programming projects in the past, both with groups and alone. </p>
-		</div>
-	</div>
 
 	<div class = "box_empty"></div>
 <!-- Content (added by javascript) -->
@@ -54,6 +58,9 @@
 const filterParamName = "filter";
 const maxShowcasePerRow = 3;
 var urlParams = new URLSearchParams(window.location.search);
+var temp_showcase = document.getElementsByTagName("template")[0];
+var temp_section = document.getElementsByTagName("template")[1];
+var temp_about = document.getElementsByTagName("template")[2];
 
 //Stuff for mobile devices
 var clickElements = document.getElementsByClassName("img_container");
@@ -114,18 +121,10 @@ function deleteAllSections(){
 	content.parentNode.insertBefore(newContent, content.nextSibling);
 	content.className = "oldcontent";
 	content.id = "";
-	console.log(content.clientHeight);
-	content.style.maxHeight = (content.clientHeight).toString() + "px";
+	content.style.maxHeight = (content.scrollHeight).toString() + "px";
+
 	setTimeout(function(){ content.classList.add("anim"); }, 10);
-	setTimeout(function(){ content.remove(); }, 310);
-	setTimeout(function(){
-		if(lastSection != ""){
-			document.getElementById(lastSection).scrollIntoView({ behavior: "smooth"});
-		};
-	}, 311);
-
-
-
+	setTimeout(function(){ content.remove(); }, 510);
 }
 
 function sectionClick(name){
@@ -135,6 +134,12 @@ function sectionClick(name){
 
 var lastSection = "";
 
+function createSpaceDiv(location){
+		var emptyDiv = document.createElement("div");
+		emptyDiv.className = "box_empty";
+		location.appendChild(emptyDiv);
+}
+
 //Creates and displays a section from XML
 function displaySection(name, onlyImportant){
 	var section = xmlDoc.getElementsByTagName("root")[0].getElementsByTagName(name)[0];
@@ -142,8 +147,6 @@ function displaySection(name, onlyImportant){
 	//Get showcase rows and template
 	var rows = document.getElementsByClassName("showcase_row");
 	var start = document.getElementById("content");
-	var temp_showcase = document.getElementsByTagName("template")[0];
-	var temp_section = document.getElementsByTagName("template")[1];
 
 
 	//Add elements to document
@@ -200,19 +203,29 @@ function displaySection(name, onlyImportant){
 		element.querySelector("a").href = showcase[k].getElementsByTagName("link")[0].childNodes[0].nodeValue;
 	}
 
-	var emptyDiv = document.createElement("div");
-	emptyDiv.className = "box_empty";
-	start.appendChild(emptyDiv);
+	createSpaceDiv(start);
+
+	if(lastSection != "" && section.tagName == lastSection){
+		document.getElementById("content").querySelector("#" + lastSection).scrollIntoView({ behavior: "smooth"});
+	}
 
 	mobileCheck(mobileQuery);
 }
 
+function displayAbout(){
+	var clone = temp_about.content.cloneNode(true);
+	document.getElementById("content").appendChild(clone);
+	createSpaceDiv(document.getElementById("content"));
+}
+
 function displayAllSections(){
 	var sections = xmlDoc.getElementsByTagName("root")[0].children;
+	displayAbout();
 	for(var i=0; i < sections.length; i++) {
 		displaySection(sections[i].tagName, true);
 	}
 }
+
 
 //When the hash changes
 function dealWithHash(){
@@ -225,6 +238,10 @@ function dealWithHash(){
 	else{
 		displayAllSections();
 	}
+	if(lastSection != ""){
+		document.getElementById("content").querySelector("#" + lastSection).scrollIntoView({ behavior: "smooth"});
+	}
+
 }
 
 //Called when the XML is ready

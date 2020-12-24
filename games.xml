@@ -1,91 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-<Games>
+	<Games>
+		<showcase_important>
+			<title>Subdivide</title>
+			<desc>A game about dividing the world. Made during my senior year of high school</desc>
+			<img>https://steamcdn-a.akamaihd.net/steam/apps/1292070/header.jpg</img>
+			<link>https://store.steampowered.com/app/1292070/SubDivide</link>
+			<enddate>7/2020</enddate>
+		</showcase_important>
 
-	<showcase_important>
-		<title>Subdivide</title>
-		<desc>A game about dividing the world. Made during my senior year of high school</desc>
-		<img>https://steamcdn-a.akamaihd.net/steam/apps/1292070/header.jpg</img>
-		<link>#subdivide</link>
-	</showcase_important>
+		<showcase_important>
+			<title>Real Boy</title>
+			<desc>Made in 72 hours for Geta Game Jam 9</desc>
+			<img>https://img.itch.zone/aW1hZ2UvNDczOTE3LzI0MzIxODQucG5n/original/KWnbxs.png</img>
+			<link>https://sockman.itch.io/real-boy</link>
+			<enddate>8/2019</enddate>
+		</showcase_important>
 
-	<showcase_important>
-		<title>Gravity Roll</title>
-		<desc>Made in 48 hours for the GMTK Game Jam 2018</desc>
-		<img>https://img.itch.zone/aW1hZ2UvMzAxMDI2LzE0NzE4MzMucG5n/315x250%23c/B4tvE9.png</img>
-		<link>#gravityroll</link>
-	</showcase_important>
+		<showcase_important>
+			<title>Protect Him</title>
+			<desc>Made in 72 hours for Ludum Dare 43</desc>
+			<img>https://img.itch.zone/aW1nLzE2ODg0ODcucG5n/315x250%23c/S2nyqI.png</img>
+			<link>https://sockman.itch.io/protecthim</link>
+			<enddate>12/2018</enddate>
+		</showcase_important>
 
-	<showcase_important>
-		<title>Protect Him</title>
-		<desc>Made in 72 hours for Ludum Dare 43</desc>
-		<img>https://img.itch.zone/aW1nLzE2ODg0ODcucG5n/315x250%23c/S2nyqI.png</img>
-		<link>#protecthim</link>
-	</showcase_important>
+		<showcase>
+			<title>Gravity Roll</title>
+			<desc>Made in 48 hours for the GMTK Game Jam 2018</desc>
+			<img>https://img.itch.zone/aW1hZ2UvMzAxMDI2LzE0NzE4MzMucG5n/315x250%23c/B4tvE9.png</img>
+			<link>https://sockman.itch.io/gravity-roll</link>
+			<enddate>9/2018</enddate>
+		</showcase>
 
-</Games>
+		<showcase>
+			<title>Zero-G</title>
+			<desc>One of my first long-term game projects.</desc>
+			<img>https://media.indiedb.com/cache/images/games/1/50/49038/thumb_620x2000/2016-01-25_2.png</img>
+			<link>https://www.indiedb.com/games/zero-g</link>
+			<enddate>9/2018</enddate>
+		</showcase>
 
-<Mods>
+	</Games>
 
-	<showcase_important>
-		<title>Darkness</title>
-		<desc>A map created for the VR game Half-Life: Alyx</desc>
-		<img>images/Darkness.jpg</img>
-		<link>https://steamcommunity.com/sharedfiles/filedetails/?id=2259542281</link>
-	</showcase_important>
+	<Mods>
+		<showcase_important>
+			<title>Darkness</title>
+			<desc>A map created for the VR game Half-Life: Alyx</desc>
+			<img>images/Darkness.jpg</img>
+			<link>https://steamcommunity.com/sharedfiles/filedetails/?id=2259542281</link>
+			<enddate>11/2020</enddate>
+		</showcase_important>
 
-	<showcase_important>
-		<title>Half-Life: Top Down</title>
-		<desc>A Mod for the 1998 game Half-Life that turns the FPS into a top-down shooter</desc>
-		<img>https://media.moddb.com/images/downloads/1/176/175073/13191627071949897798_20190222151.png</img>
-		<link>https://www.moddb.com/mods/half-life-top-down</link>
-	</showcase_important>
+		<showcase>
+			<title>Half-Life: Randomize</title>
+			<desc>A Mod for the 1998 game Half-Life that randomizes the placement of enemies, items, voice lines, and more</desc>
+			<img>https://media.moddb.com/cache/images/downloads/1/179/178119/thumb_620x2000/randomLogo.png</img>
+			<link>https://www.moddb.com/mods/half-life-randomizer</link>
+			<enddate>5/2020</enddate>
+		</showcase>
 
-	<showcase>
-		<title>Half-Life: Randomize</title>
-		<desc>A Mod for the 1998 game Half-Life that randomizes the placement of enemies, items, voice lines, and more</desc>
-		<img>https://media.moddb.com/cache/images/downloads/1/179/178119/thumb_620x2000/randomLogo.png</img>
-		<link>https://www.moddb.com/mods/half-life-randomizer</link>
-	</showcase>
+		<showcase_important>
+			<title>Half-Life: Top Down</title>
+			<desc>A Mod for the 1998 game Half-Life that turns the FPS into a top-down shooter</desc>
+			<img>https://media.moddb.com/images/downloads/1/176/175073/13191627071949897798_20190222151.png</img>
+			<link>https://www.moddb.com/mods/half-life-top-down</link>
+			<enddate>3/2019</enddate>
+		</showcase_important>
 
-	<showcase_important>
-		<title>Half-Life: Classic</title>
-		<desc>A Mod for the 1998 game Half-Life that randomizes the placement of enemies, items, voice lines, and more</desc>
-		<img>https://media.moddb.com/images/articles/1/247/246704/HL2ClassicLogo1.png</img>
-		<link>https://www.moddb.com/mods/half-life-2-classic</link>
-	</showcase_important>
+		<showcase_important>
+			<title>Half-Life 2: Classic</title>
+			<desc>A "demake" that recreates 2004's Half-Life 2 inside of it's predecessor.</desc>
+			<img>https://media.moddb.com/images/articles/1/247/246704/HL2ClassicLogo1.png</img>
+			<link>https://www.moddb.com/mods/half-life-2-classic</link>
+			<enddate>11/2018</enddate>
+		</showcase_important>
+	</Mods>
 
-</Mods>
+	<Music>
+		<showcase_important>
+			<title>Reinstated</title>
+			<desc>An experimental track</desc>
+			<img>https://f4.bcbits.com/img/a1824917727_10.jpg</img>
+			<link>https://julianheuser.bandcamp.com/track/reinstated</link>
+			<enddate>12/2020</enddate>
+		</showcase_important>
 
-<Music>
+		<showcase_important>
+			<title>Interspace</title>
+			<desc>An experimental track</desc>
+			<img>https://f4.bcbits.com/img/a1260707343_10.jpg</img>
+			<link>https://julianheuser.bandcamp.com/track/interspace</link>
+			<enddate>10/2020</enddate>
+		</showcase_important>
 
-	<showcase_important>
-		<title>Interspace</title>
-		<desc>An experimental track</desc>
-		<img>https://f4.bcbits.com/img/a1260707343_10.jpg</img>
-		<link>https://julianheuser.bandcamp.com/track/interspace</link>
-	</showcase_important>
+		<showcase>
+			<title>Repeat</title>
+			<desc>An experimental track</desc>
+			<img>https://f4.bcbits.com/img/a2519377278_16.jpg</img>
+			<link>https://julianheuser.bandcamp.com/track/repeat</link>
+			<enddate>8/2020</enddate>
+		</showcase>
 
-	<showcase_important>
-		<title>Repeat</title>
-		<desc>An experimental track</desc>
-		<img>https://f4.bcbits.com/img/a2519377278_16.jpg</img>
-		<link>https://julianheuser.bandcamp.com/track/repeat</link>
-	</showcase_important>
+		<showcase_important>
+			<title>SubDivide Soundtrack</title>
+			<desc>The soundtrack composed for my game, SubDivide</desc>
+			<img>https://f4.bcbits.com/img/a4029110159_16.jpg</img>
+			<link>https://julianheuser.bandcamp.com/album/subdivide-ost</link>
+			<enddate>8/2020</enddate>
+		</showcase_important>
 
-	<showcase_important>
-		<title>SubDivide Soundtrack</title>
-		<desc>The soundtrack composed for my game, SubDivide</desc>
-		<img>https://f4.bcbits.com/img/a4029110159_16.jpg</img>
-		<link>https://julianheuser.bandcamp.com/album/subdivide-ost</link>
-	</showcase_important>
-
-	<showcase>
-		<title>Waves</title>
-		<desc>An experimental track</desc>
-		<img>https://f4.bcbits.com/img/a2464860812_16.jpg</img>
-		<link>https://julianheuser.bandcamp.com/track/waves</link>
-	</showcase>
-
-</Music>
+		<showcase>
+			<title>Waves</title>
+			<desc>An experimental track</desc>
+			<img>https://f4.bcbits.com/img/a2464860812_16.jpg</img>
+			<link>https://julianheuser.bandcamp.com/track/waves</link>
+			<enddate>7/2020</enddate>
+		</showcase>
+	</Music>
 </root>
