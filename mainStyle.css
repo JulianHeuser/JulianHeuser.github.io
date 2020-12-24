@@ -17,6 +17,18 @@ h1{
 	font-size: 75px;
 	margin: 5px;
 }
+
+.oldcontent{
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	display: block;
+	transition: max-height .3s ease-out;
+}
+.oldcontent.anim{
+	max-height: 0 !important;
+}
+
 /*Section header*/
 .section_header{
 	font-size: 55px;

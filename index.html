@@ -107,7 +107,25 @@ xhttp.send();
 var xmlDoc;
 
 function deleteAllSections(){
-	document.getElementById("content").innerHTML = "";
+	//document.getElementById("content").innerHTML = "";
+	var content = document.getElementById("content");
+	var newContent = document.createElement("span");
+	newContent.id = "content";
+	content.parentNode.insertBefore(newContent, content.nextSibling);
+	content.className = "oldcontent";
+	content.id = "";
+	console.log(content.clientHeight);
+	content.style.maxHeight = (content.clientHeight).toString() + "px";
+	setTimeout(function(){ content.classList.add("anim"); }, 10);
+	setTimeout(function(){ content.remove(); }, 310);
+	setTimeout(function(){
+		if(lastSection != ""){
+			document.getElementById(lastSection).scrollIntoView({ behavior: "smooth"});
+		};
+	}, 311);
+
+
+
 }
 
 function sectionClick(name){
@@ -186,10 +204,6 @@ function displaySection(name, onlyImportant){
 	emptyDiv.className = "box_empty";
 	start.appendChild(emptyDiv);
 
-	if(section.tagName == lastSection){
-			document.getElementById(lastSection).scrollIntoView();
-	}
-
 	mobileCheck(mobileQuery);
 }
 
@@ -197,9 +211,6 @@ function displayAllSections(){
 	var sections = xmlDoc.getElementsByTagName("root")[0].children;
 	for(var i=0; i < sections.length; i++) {
 		displaySection(sections[i].tagName, true);
-	}
-	if(lastSection != ""){
-		document.getElementById(lastSection).scrollIntoView();
 	}
 }
 
