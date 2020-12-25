@@ -154,10 +154,9 @@ function deleteAllSections(){
 	content.parentNode.insertBefore(newContent, content.nextSibling);
 	content.className = "oldcontent";
 	content.id = "";
-	content.style.maxHeight = (content.scrollHeight).toString() + "px";
-
-	setTimeout(function(){ content.classList.add("anim"); }, 10);
-	setTimeout(function(){ content.remove(); }, 510);
+	//content.style.maxHeight = (content.scrollHeight).toString() + "px";
+	content.classList.add("anim");
+	setTimeout(function(){ content.remove(); }, 300);
 }
 
 //Click event to transition between sections
@@ -166,7 +165,7 @@ function sectionClick(name){
 	dealWithHash();
 }
 
-var lastSection = "";
+
 
 //Creates an "emptyDiv" element for spacing
 function createSpaceDiv(location){
@@ -208,7 +207,6 @@ function displaySection(name, onlyImportant){
     if(urlParams.has(filterParamName)){
       innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Back";
       innerContent.getElementsByClassName("section_showmore")[0].addEventListener("click", function() { sectionClick("?"); }, false);
-      lastSection = section.tagName;
 	 }
 	 else{
       innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Show All";
@@ -243,10 +241,6 @@ function displaySection(name, onlyImportant){
 	}
 
 	createSpaceDiv(start);
-
-	//if(lastSection != "" && section.tagName == lastSection){
-	//	document.getElementById("content").querySelector("#" + lastSection).scrollIntoView({ behavior: "smooth"});
-	//}
 
 	mobileCheck(mobileQuery);
 }
@@ -290,9 +284,7 @@ function dealWithHash(){
 	else{
 		displayAllSections();
 	}
-	if(lastSection != "" && !urlParams.has("s")){
-		document.getElementById("content").querySelector("#" + lastSection).scrollIntoView({ behavior: "smooth"});
-	}
+	window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 //Called when the XML is ready
