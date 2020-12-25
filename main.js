@@ -60,6 +60,13 @@ if(isIE){
 	})(window.Node || window.Element);
 }
 
+//More IE support - use main_addons script if we're not in IE
+if (!isIE){
+  var script = document.createElement('script');
+  script.src = "/main_addons.js";
+  document.getElementsByTagName("body")[0].insertBefore(script, document.getElementsByTagName("script")[0]);
+}
+
 function createClone(element){
 	var clone = isIE ? element.cloneNode(true) : element.content.cloneNode(true);
 	if(isIE){
@@ -125,14 +132,6 @@ function openSideBar(){
   ham_open.classList.toggle("open");
 }
 
-//called when screen is scrolled past header
-if(!isIE){
-var observer = new IntersectionObserver(
-  ([e]) => ham_open.classList.toggle("pinned", e.intersectionRatio < 1),
-  { threshold: [1] }
-);
-observer.observe(document.getElementsByClassName("links")[0]);
-}
 //Template handling
 //Open XML
 var xhttp = new XMLHttpRequest();
