@@ -9,7 +9,7 @@
 
 <body>
 <!-- Header -->
-<div class = "outer">
+<div class = "outer" id = "header">
 <div class = "wrapper">
 	<div class = "header"><h1>Julian Heuser</h1>
 		<span class = "links">
@@ -19,8 +19,6 @@
 			<a href = "https://www.moddb.com/members/sockman1">ModDB</a>
 		</span>
 	</div>
-
-	<div class = "box_empty"></div>
 
 <!-- Templates -->
 	<!-- Showcase -->
@@ -36,7 +34,7 @@
 	<!-- Section -->
 	<template class = "IEhidden">
 		<div class = "box_content">
-			<h2 class = "section_header"><span class = "section_textlabel"></span> <a class = "section_showmore">Show all</a></h2>
+			<h2 class = "section_header"><div class = "section_header_spacer"></div><span class = "section_textlabel"></span> <a class = "section_showmore">Show all</a></h2>
 			<div class = "showcase_row">
 			</div>
 		</div>
@@ -52,7 +50,27 @@
 		</div>
 	</template>
 
-<!-- Content (added by javascript) -->
+	<!-- Contact section -->
+	<template class = "IEhidden">
+		<div class = "box_outer">
+			<div class = "box_content">
+				<h2 class = "section_header">Contact</h2>
+				<p class = "description_text">There's some text here. lorum ipsum. blahblah blah</p>
+			</div>
+		</div>
+	</template>
+
+	<div id = "nav_open" onclick = "openSideBar();">
+		<span></span>
+	</div>
+<!-- nav bar -->
+	<div class = "nav_outer">
+		<span class = "nav_button" onclick = "sectionClick('?s=0'); openSideBar();">Home</span>
+		<span class = "nav_button" onclick = "sectionClick('?filter=Contact&s=1'); openSideBar();">About/Contact</span>
+		<span class = "nav_button" onclick = "sectionClick('?filter=Games&s=1'); openSideBar();">Games</span>
+		<span class = "nav_button" onclick = "sectionClick('?filter=Mods&s=1'); openSideBar();">Mods</span>
+		<span class = "nav_button" onclick = "sectionClick('?filter=Music&s=1'); openSideBar();">Music</span>
+	</div>
 
 <!-- Content (added by javascript) -->
 	<span id = "content"></span>

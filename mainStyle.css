@@ -40,6 +40,10 @@ h1{
 	justify-content: space-between;
 }
 
+.section_header_spacer{
+	display: none;
+}
+
 .section_showmore{
 	font-size: 30px;
 	font-weight: 400;
@@ -97,6 +101,7 @@ h1{
 }
 
 .box_empty{
+	background-image: linear-gradient(to right, #23becb , #0f555c);
 	height: 100px;
 }
 
@@ -184,14 +189,30 @@ h1{
 	justify-content: space-between;
 }
 
-#info_popout{
-	left: 0;
-	height: 0;
-	width: 100%;
-	z-index: 4;
-	border: none;
-	overflow: hidden;
-	transition: .2s ease;
+.nav_outer{
+	background-image: linear-gradient(to right, #1a8e99 , #062528);
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.nav_button{
+	font-size: 25px;
+	padding: 10px;
+	transition: background-color .2s ease;
+	text-align: center;
+	min-width: 128px;
+	display: inline-block;
+	color: white;
+	cursor: pointer;
+}
+.nav_button:hover{
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#nav_open{
+	display: none;
+	pointer-events: none;
 }
 
 /*IE11 support*/
@@ -289,10 +310,12 @@ h1{
 		align-items:center;
     justify-content:space-around;
 		padding: 5vw;
+		font-size: 10vw;
 	}
 
-	.section_textlabel{
-		font-size: 10vw;
+	.section_header_spacer{
+		width: 100%;
+		display: block;
 	}
 
 	.section_showmore{
@@ -300,4 +323,80 @@ h1{
 		width: 100%;
 		font-size: 5vw;
 	}
+
+	.nav_outer{
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		z-index: 50;
+		justify-content: flex-start;
+		background-image: none;
+		background-color: rgba(16,91,97,255);
+		top: 0;
+		left: -500px;
+		transition: left .2s ease;
+		padding-top: 20vw;
+		width: 50vw;
+		word-wrap: break-word;
+	}
+	.nav_outer.open{
+		left: 0;
+	}
+
+	.nav_button{
+		font-size: 5vw;
+		min-width: 0;
+	}
+	.nav_button:hover{
+	}
+
+	#nav_open{
+		position: fixed;
+		display: block;
+		pointer-events: all;
+		z-index: 51;
+		top: 5vw;
+		height: 10vw;
+		width: 10vw;
+		z-index: 51;
+		transition: .2s ease;
+		left: -6vw;
+	}
+	#nav_open.pinned{
+		left: 5vw;
+	}
+	#nav_open.open{
+		width: 40vw;
+		left: 5vw;
+	}
+	#nav_open span::before{
+		position: absolute;
+		display: block;
+    background: black;
+		border-radius: 9px;
+		width: 100%;
+		height: 2vw;
+		content: "";
+		top: 4vw;
+	}
+	#nav_open span{
+		position: absolute;
+		display: block;
+    background: black;
+		border-radius: 9px;
+		width: 100%;
+		height: 2vw;
+		content: "";
+	}
+	#nav_open span::after{
+		position: absolute;
+		display: block;
+    background: black;
+		border-radius: 9px;
+		width: 100%;
+		height: 2vw;
+		content: "";
+		top: 8vw;
+	}
+
 }

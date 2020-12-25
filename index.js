@@ -1,5 +1,4 @@
-//IE11/10 crap - I mostly copied/pasted this stuff since it's just replacements for newer spec stuff
-//Thank you stackoverflow: https://stackoverflow.com/questions/45758837/script5009-urlsearchparams-is-undefined-in-ie-11
+//IE11/10 crap - Thank you stackoverflow: https://stackoverflow.com/questions/45758837/script5009-urlsearchparams-is-undefined-in-ie-11
 var isIE = (!!window.MSInputMethodContext && !!document.documentMode) || (navigator.userAgent.indexOf('MSIE') > 1);
 if(isIE){
 
@@ -69,12 +68,15 @@ function createClone(element){
 	return clone;
 }
 
+
+//Global vars
 var filterParamName = "filter";
 var maxShowcasePerRow = 3;
 var urlParams = new URLSearchParams(window.location.search);
 var temp_showcase = document.getElementsByTagName("template")[0];
 var temp_section = document.getElementsByTagName("template")[1];
 var temp_about = document.getElementsByTagName("template")[2];
+var temp_content = document.getElementsByTagName("template")[3];
 
 
 
@@ -116,7 +118,21 @@ function mobileCheck(x){
 	}
 }
 
+//Mobile hamburger menu
+var ham_open = document.getElementById("nav_open");
+function openSideBar(){
+  document.getElementsByClassName('nav_outer')[0].classList.toggle("open");
+  ham_open.classList.toggle("open");
+}
 
+//called when screen is scrolled past header
+if(!isIE){
+var observer = new IntersectionObserver(
+  ([e]) => ham_open.classList.toggle("pinned", e.intersectionRatio < 1),
+  { threshold: [1] }
+);
+observer.observe(document.getElementsByClassName("links")[0]);
+}
 //Template handling
 //Open XML
 var xhttp = new XMLHttpRequest();
@@ -186,15 +202,20 @@ function displaySection(name, onlyImportant){
 	var innerContent = start.appendChild(outerdiv);
 	innerContent.getElementsByClassName("section_textlabel")[0].innerHTML = section.tagName;
 
-	if(urlParams.has(filterParamName)){
-		innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Back";
-		innerContent.getElementsByClassName("section_showmore")[0].addEventListener('click', function() { sectionClick("?"); }, false);
-		lastSection = section.tagName;
-	}
-	else{
-		innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Show All";
-		innerContent.getElementsByClassName("section_showmore")[0].addEventListener('click', function() { sectionClick("?" + filterParamName +"=" + section.tagName); }, false);
-	}
+  if(urlParams.has("s") && urlParams.get("s") > 0){
+    innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "";
+  }
+  else{
+    if(urlParams.has(filterParamName)){
+      innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Back";
+      innerContent.getElementsByClassName("section_showmore")[0].addEventListener("click", function() { sectionClick("?"); }, false);
+      lastSection = section.tagName;
+	 }
+	 else{
+      innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Show All";
+		  innerContent.getElementsByClassName("section_showmore")[0].addEventListener("click", function() { sectionClick("?" + filterParamName +"=" + section.tagName); }, false);
+	 }
+ }
 
 	var row = 0;
 	var currentRow = innerContent.getElementsByClassName("showcase_row")[0];
@@ -224,9 +245,9 @@ function displaySection(name, onlyImportant){
 
 	createSpaceDiv(start);
 
-	if(lastSection != "" && section.tagName == lastSection){
-		document.getElementById("content").querySelector("#" + lastSection).scrollIntoView({ behavior: "smooth"});
-	}
+	//if(lastSection != "" && section.tagName == lastSection){
+	//	document.getElementById("content").querySelector("#" + lastSection).scrollIntoView({ behavior: "smooth"});
+	//}
 
 	mobileCheck(mobileQuery);
 }
@@ -235,7 +256,12 @@ function displaySection(name, onlyImportant){
 function displayAbout(){
 	document.getElementById("content").appendChild(createClone(temp_about));
 	createSpaceDiv(document.getElementById("content"));
+}
 
+//Displays the "contact" section
+function displayContact(){
+	document.getElementById("content").appendChild(createClone(temp_content));
+	createSpaceDiv(document.getElementById("content"));
 }
 
 //Display all the sections with row limits - acts as "home page"
@@ -248,18 +274,24 @@ function displayAllSections(){
 }
 
 
-//When the hash changes
+//When the url changes
 function dealWithHash(){
 	urlParams = new URLSearchParams(window.location.search);
 	deleteAllSections();
 	if(urlParams.has(filterParamName)){
-		var param = urlParams.get(filterParamName);
-		displaySection(param, false);
+    if(urlParams.get(filterParamName) == "Contact"){
+      displayAbout();
+      displayContact();
+    }
+    else{
+		  var param = urlParams.get(filterParamName);
+		  displaySection(param, false);
+    }
 	}
 	else{
 		displayAllSections();
 	}
-	if(lastSection != ""){
+	if(lastSection != "" && !urlParams.has("s")){
 		document.getElementById("content").querySelector("#" + lastSection).scrollIntoView({ behavior: "smooth"});
 	}
 }
