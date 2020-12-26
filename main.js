@@ -178,7 +178,7 @@ function createSpaceDiv(location){
 function displaySection(name, onlyImportant){
 	var section = xmlDoc.getElementsByTagName("root")[0].getElementsByTagName(name)[0];
 
-	//Get showcase rows and template
+	//Get showcase rows and content span
 	var rows = document.getElementsByClassName("showcase_row");
 	var start = document.getElementById("content");
 
@@ -221,9 +221,9 @@ function displaySection(name, onlyImportant){
 		row += 1;
 		if (row % (maxShowcasePerRow+1) == 0){
 			row = 0;
-			var div = document.createElement("div")
-			div.className = "showcase_row";
-			currentRow = innerContent.getElementsByClassName("box_content")[0].appendChild(div);
+			//var div = document.createElement("div")
+			//div.className = "showcase_row";
+			//currentRow = innerContent.getElementsByClassName("box_content")[0].appendChild(div);
 		}
 		//Create showcase element
 		var div = document.createElement("div");

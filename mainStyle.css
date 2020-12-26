@@ -2,6 +2,7 @@
 23becb - 0f555c : light gradient
 1a8e99 - 062528: dark gradient
 16,91,97: foreground-color
+062528: shadow color
 */
 
 
@@ -120,9 +121,7 @@ h1{
 	margin: 1vw;
 	background-color: rgba(0,0,0,.5);
 	height: 12vw;
-	max-width: 30vw;
-	/*380*/
-	flex-wrap: nowrap;
+	width: 24vw;
 	flex-grow: 1;
 }
 
@@ -134,7 +133,7 @@ h1{
     bottom: 0px;
     -moz-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, .25);
     -webkit-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, .25);
-		box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, .25);
+		box-shadow: 0 0 10px 1px #062528;
 		z-index: 2;
 		transition: .2s ease;
     pointer-events: none;
@@ -142,7 +141,7 @@ h1{
 .showcase:hover .shadow{
 	-moz-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 1);
 	-webkit-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 1);
-	box-shadow: inset 0px 0px 40px 30px rgba(0, 0, 0, .5);
+	box-shadow: 0 0 20px 5px #062528;
 }
 
 .showcase img{
