@@ -36,7 +36,7 @@ if(isIE){
         }
     };
 
-		//Define .children
+	//Define .children
 	(function(constructor) {
   	if (constructor &&
     	constructor.prototype &&
@@ -128,7 +128,7 @@ function mobileCheck(x){
 //Mobile hamburger menu
 var ham_open = document.getElementById("nav_open");
 function openSideBar(){
-  document.getElementsByClassName('nav_outer')[0].classList.toggle("open");
+  document.getElementById('nav_outer').classList.toggle("open");
   ham_open.classList.toggle("open");
 }
 
@@ -251,11 +251,6 @@ function displayAbout(){
 	createSpaceDiv(document.getElementById("content"));
 }
 
-//Displays the "contact" section
-function displayContact(){
-	document.getElementById("content").appendChild(createClone(temp_content));
-	createSpaceDiv(document.getElementById("content"));
-}
 
 //Display all the sections with row limits - acts as "home page"
 function displayAllSections(){
@@ -272,9 +267,8 @@ function dealWithHash(){
 	urlParams = new URLSearchParams(window.location.search);
 	deleteAllSections();
 	if(urlParams.has(filterParamName)){
-    if(urlParams.get(filterParamName) == "Contact"){
+    if(urlParams.get(filterParamName) == "About"){
       displayAbout();
-      displayContact();
     }
     else{
 		  var param = urlParams.get(filterParamName);

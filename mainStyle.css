@@ -57,7 +57,7 @@ h1{
 	align-self: flex-end;
 }
 
-.header{
+#header{
 	margin: 5px;
 	margin-bottom: 10px;
 }
@@ -75,14 +75,14 @@ h1{
 	font-weight: 400;
 }
 
-.outer {
+#outer {
 	margin: 0;
 	width: auto;
 	height: 100%;
 	text-align: center;
 }
 
-.wrapper {
+#wrapper {
 	margin: 0 auto;
 	width: auto;
 }
@@ -92,6 +92,9 @@ h1{
 	background-image: linear-gradient(to right, #1a8e99 , #062528);
 	padding-top: 10px;
 	padding-bottom: 10px;
+	box-shadow: 0 0 10px 0 #062528;
+	position: relative;
+	z-index: 5;
 }
 
 .box_content{
@@ -108,6 +111,8 @@ h1{
 .box_empty{
 	background-image: linear-gradient(to right, #23becb , #0f555c);
 	height: 100px;
+	position: relative;
+	z-index: 4;
 }
 
 .showcase{
@@ -194,7 +199,7 @@ h1{
 	justify-content: space-between;
 }
 
-.nav_outer{
+#nav_outer{
 	background-image: linear-gradient(to right, #1a8e99 , #062528);
 	height: 100%;
 	display: flex;
@@ -202,16 +207,18 @@ h1{
 	position: sticky;
 	top: 0;
 	z-index: 50;
+	box-shadow: 0 -5px 10px -5px #062528;
+	transition: box-shadow .1s ease;
+}
+#nav_outer.pinned{
+	box-shadow: 0 0 10px 0 #062528;
 }
 
 .nav_button{
 	font-size: 25px;
 	padding: 10px;
 	transition: background-color .2s ease;
-	text-align: center;
 	min-width: 128px;
-	display: inline-block;
-	color: white;
 	cursor: pointer;
 }
 .nav_button:hover{
@@ -222,6 +229,18 @@ h1{
 	display: none;
 	pointer-events: none;
 }
+
+#footer{
+}
+
+/*
+.footer_content{
+	display: flex;
+}
+.footer_column{
+	margin-right: 10px;
+}
+*/
 
 /*IE11 support*/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -296,10 +315,6 @@ h1{
 		font-size: 5vw;
 		margin: 0;
 	}
-	.header{
-		margin: 5px;
-		margin-bottom: 10px;
-	}
 
 	.links{
 		font-size: 4vw;
@@ -332,7 +347,7 @@ h1{
 		font-size: 5vw;
 	}
 
-	.nav_outer{
+	#nav_outer{
 		position: fixed;
 		display: flex;
 		flex-direction: column;
@@ -346,14 +361,19 @@ h1{
 		padding-top: 20vw;
 		width: 50vw;
 		word-wrap: break-word;
+		box-shadow: 0 0 10px 0 #062528
 	}
-	.nav_outer.open{
+	#nav_outer.open{
 		left: 0;
 	}
 
 	.nav_button{
-		font-size: 5vw;
+		font-size: 10vw;
 		min-width: 0;
+		height: 10vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	.nav_button:hover{
 	}

@@ -9,9 +9,9 @@
 
 <body>
 <!-- Header -->
-<div class = "outer">
-<div class = "wrapper">
-	<div class = "header"><h1>Julian Heuser</h1>
+<div id = "outer">
+<div id = "wrapper">
+	<div id = "header"><h1>Julian Heuser</h1>
 		<span class = "links">
 			<a href = "https://www.linkedin.com/in/julian-heuser/">LinkedIn</a> |
 			<a href = "https://sockman.itch.io/">itch.io</a> |
@@ -50,30 +50,30 @@
 		</div>
 	</template>
 
-	<!-- Contact section -->
-	<template class = "IEhidden">
-		<div class = "box_outer">
-			<div class = "box_content">
-				<h2 class = "section_header">Contact</h2>
-				<p class = "description_text">Email: <a href = "mailto:julianheuser@outlook.com">julianheuser@outlook.com</a></p>
-			</div>
-		</div>
-	</template>
 
 	<div id = "nav_open" onclick = "openSideBar();">
 		<span></span>
 	</div>
 <!-- nav bar -->
-	<div class = "nav_outer">
-		<span class = "nav_button" onclick = "sectionClick('?s=0'); openSideBar();">Home</span>
-		<span class = "nav_button" onclick = "sectionClick('?filter=Contact&s=1'); openSideBar();">About/Contact</span>
-		<span class = "nav_button" onclick = "sectionClick('?filter=Games&s=1'); openSideBar();">Games</span>
-		<span class = "nav_button" onclick = "sectionClick('?filter=Mods&s=1'); openSideBar();">Mods</span>
-		<span class = "nav_button" onclick = "sectionClick('?filter=Music&s=1'); openSideBar();">Music</span>
-	</div>
+	<nav id = "nav_outer">
+		<a class = "nav_button" onclick = "sectionClick('?s=0'); openSideBar();">Home</a>
+		<a class = "nav_button" onclick = "sectionClick('?filter=About&s=1'); openSideBar();">About</a>
+		<a class = "nav_button" onclick = "sectionClick('?filter=Games&s=1'); openSideBar();">Games</a>
+		<a class = "nav_button" onclick = "sectionClick('?filter=Mods&s=1'); openSideBar();">Mods</a>
+		<a class = "nav_button" onclick = "sectionClick('?filter=Music&s=1'); openSideBar();">Music</a>
+	</nav>
 
 <!-- Content (added by javascript) -->
 	<span id = "content"></span>
+
+	<div id = "footer" class = "box_outer" >
+		<div class = "box_content footer_content">
+			<div class  = "footer_column">
+				<h2 class = "section_header">Contact</h2>
+				<p class = "description_text">Email: <a href = "mailto:julianheuser@outlook.com">julianheuser@outlook.com</a></p>
+			</div>
+		</div>
+	</div>
 
 </div>
 </div>
