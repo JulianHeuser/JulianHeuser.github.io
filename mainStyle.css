@@ -290,12 +290,12 @@ h1{
 	}
 	.showcase_text{
 		z-index: 2;
-		top: 12vw;
 	}
 
 	.showcase_heading{
 		font-size: 5vw;
 		height: 10vw;
+		padding-top: 2.5vw
 	}
 	.showcase_desc{
 		font-size: 4vw;

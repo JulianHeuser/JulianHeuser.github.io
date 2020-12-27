@@ -108,11 +108,11 @@ function info_show(event) {
 	}
 
 	clickedElement.style.pointerEvents = "";
-	clickedElement.style.opacity = "1";
+	//clickedElement.style.opacity = "1";
 
 	if(selectedElement != null){
 		selectedElement.style.pointerEvents = "none"
-		selectedElement.style.opacity = "0"
+		//selectedElement.style.opacity = "0"
 	}
 	selectedElement = clickedElement;
 }
