@@ -11,6 +11,7 @@ body{
 	color: white;
 	font-family: "Segoe UI", sans-serif;
 	background-image: linear-gradient(to right, #23becb , #0f555c);
+	background-color: #23becb;
 	margin: 0;
 }
 
@@ -204,6 +205,7 @@ h1{
 	display: flex;
 	justify-content: center;
 	position: sticky;
+	position: -webkit-sticky;
 	top: 0;
 	z-index: 50;
 	box-shadow: 0 -5px 10px -5px #062528;

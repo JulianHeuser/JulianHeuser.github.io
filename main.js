@@ -186,10 +186,10 @@ function displaySection(name, onlyImportant){
 	//Add elements to document
 	var showcase;
 	if(onlyImportant){
-		var showcase = section.querySelectorAll("showcase_important");
+		showcase = section.querySelectorAll("showcase_important");
 	}
 	else{
-		var showcase = section.querySelectorAll("showcase,showcase_important");
+		showcase = section.querySelectorAll("showcase,showcase_important");
 	}
 
 	var outerdiv = document.createElement("div");

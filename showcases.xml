@@ -118,4 +118,14 @@
 			<enddate>7/2020</enddate>
 		</showcase>
 	</Music>
+
+	<Other>
+		<showcase_important>
+			<title>Frameless Labs Symposium Room Design</title>
+			<desc>I participated in a competition to create an environment for use in an online convention. My entry came in first place.</desc>
+			<img>/images/Frameless.jpg</img>
+			<link>https://hubs.mozilla.com/Z67FaEm/modest-decisive-dominion</link>
+			<enddate>7/2020</enddate>
+		</showcase_important>
+	</Other>
 </root>
