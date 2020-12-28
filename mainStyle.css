@@ -123,7 +123,6 @@ h1{
 	background-color: rgba(0,0,0,.5);
 	width: 24vw;
 	height: 12vw;
-	flex-grow: 1;
 }
 
 .shadow {
