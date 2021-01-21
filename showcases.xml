@@ -78,13 +78,21 @@
 	</Mods>
 
 	<Music>
-		<showcase_important>
+			<showcase_important>
+				<title>Pillars</title>
+				<desc>An album with remasters of some older tracks along with two new tracks</desc>
+				<img>images/pillars.jpg</img>
+				<link>https://julianheuser.bandcamp.com/album/pillars</link>
+				<enddate>1/2021</enddate>
+			</showcase_important>
+
+		<showcase>
 			<title>Reinstated</title>
 			<desc>An experimental track</desc>
 			<img>images/reinstated.jpg</img>
 			<link>https://julianheuser.bandcamp.com/track/reinstated</link>
 			<enddate>12/2020</enddate>
-		</showcase_important>
+		</showcase>
 
 		<showcase_important>
 			<title>Interspace</title>

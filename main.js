@@ -255,7 +255,7 @@ function displayAbout(){
 //Display all the sections with row limits - acts as "home page"
 function displayAllSections(){
 	var sections = xmlDoc.getElementsByTagName("root")[0].children;
-	displayAbout();
+	//displayAbout();
 	for(var i=0; i < sections.length; i++) {
 		displaySection(sections[i].tagName, true);
 	}
