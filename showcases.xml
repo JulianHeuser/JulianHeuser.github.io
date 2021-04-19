@@ -86,30 +86,6 @@
 				<enddate>1/2021</enddate>
 			</showcase_important>
 
-		<showcase>
-			<title>Reinstated</title>
-			<desc>An experimental track</desc>
-			<img>images/reinstated.jpg</img>
-			<link>https://julianheuser.bandcamp.com/track/reinstated</link>
-			<enddate>12/2020</enddate>
-		</showcase>
-
-		<showcase_important>
-			<title>Interspace</title>
-			<desc>An experimental track</desc>
-			<img>images/interspace.jpg</img>
-			<link>https://julianheuser.bandcamp.com/track/interspace</link>
-			<enddate>10/2020</enddate>
-		</showcase_important>
-
-		<showcase>
-			<title>Repeat</title>
-			<desc>An experimental track</desc>
-			<img>images/repeat.jpg</img>
-			<link>https://julianheuser.bandcamp.com/track/repeat</link>
-			<enddate>8/2020</enddate>
-		</showcase>
-
 		<showcase_important>
 			<title>SubDivide Soundtrack</title>
 			<desc>The soundtrack composed for my game, SubDivide</desc>
@@ -117,14 +93,6 @@
 			<link>https://julianheuser.bandcamp.com/album/subdivide-ost</link>
 			<enddate>8/2020</enddate>
 		</showcase_important>
-
-		<showcase>
-			<title>Waves</title>
-			<desc>An experimental track</desc>
-			<img>images/waves.jpg</img>
-			<link>https://julianheuser.bandcamp.com/track/waves</link>
-			<enddate>7/2020</enddate>
-		</showcase>
 	</Music>
 
 	<Other>
