@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Julian Heuser</title>
+<meta name="viewport" charset = "UTF-8" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Julian Heuser">
+<link rel="stylesheet" type="text/css" href="../mainStyle.css">
+<link rel="stylesheet" type="text/css" href="blogStyle.css">
+</head>
+
+<body>
+<!-- Header -->
+<div id = "outer">
+<div id = "wrapper">
+	<div id = "header"><h1>Julian Heuser</h1>
+		<span class = "links">
+			<a href = "https://www.linkedin.com/in/julian-heuser/">LinkedIn</a> |
+			<a href = "https://sockman.itch.io/">itch.io</a> |
+			<a href = "https://julianheuser.bandcamp.com/">Bandcamp</a> |
+			<a href = "https://www.moddb.com/members/sockman1">ModDB</a>
+		</span>
+	</div>
+
+
+	<div id = "nav_open" onclick = "openSideBar();">
+		<span></span>
+	</div>
+<!-- nav bar -->
+	<nav id = "nav_outer">
+		<a class = "nav_button" onclick = "sectionClick('?s=0'); openSideBar();">Home</a>
+		<a class = "nav_button" onclick = "sectionClick('?filter=About&s=1'); openSideBar();">About</a>
+		<a class = "nav_button" onclick = "sectionClick('?filter=Games&s=1'); openSideBar();">Games</a>
+		<a class = "nav_button" onclick = "sectionClick('?filter=Mods&s=1'); openSideBar();">Mods</a>
+		<a class = "nav_button" onclick = "sectionClick('?filter=Music&s=1'); openSideBar();">Music</a>
+		<a class = "nav_button" onclick = "sectionClick('?filter=Other&s=1'); openSideBar();">Other</a>
+	</nav>
+
+<div id = "blogContentWrapper">
+
+<!-- Side Nav Bar -->
+<div id = "blogNavBar"><h2>
+	<a href="HorizontalMusic.html"> Horizontal Music </a> <p>
+	<a href="VerticalMusic.html"> Vertical Music </a> <p>
+	<a href="HorizontalMusic.html"> Generative Music </a> <p>
+</h2></div>
+
+
+<!-- Content -->
+	<span id = "content">
+		<div class = "box_outer">
+			<div class = "box_content">
+				<h2 class = "section_header"><div class = "section_header_spacer"></div><span class = "section_textlabel">Vertical Music in Portal 2</span></h2>
+				<div class = "showcase_row">
+
+<span class = description_text>
+Last time we talked about horizontal music, so this time we’ll talk about it’s complement: vertical music. To best understand vertical music, let’s look at the staff from the last post again:
+<p>
+<img src = "media/musicStaff.png">
+<p>
+Different instruments are laid out from top to bottom (vertically), so vertical music is simply adding or removing these different instruments, or tracks, over time. One of the earliest and most simple examples of this is in Super Mario World, where riding Yoshi would enable accompanying bongos. The important thing to note here is that the original music is still playing, there’s just another layer added on top of it.
+<p>
+<video width="560" height="315" src="media/smw.mp4"  type="video/mp4" controls></iframe>
+<p>
+For a more complex example, the game we’ll look at is Portal 2. Portal 2 has a lot of dynamic music, including horizontal and even some generative music (which we’ll get to later!). But vertical music is probably its most utilized technique.
+<p>
+To start off, let’s look at an example from test chamber 10, one of the earlier puzzles in the game. This includes quite a few mechanics, including lasers, aerial faith plates which launch the player in the air, and cubes with buttons. Watch this walkthrough and listen carefully (although feel free to skip around if you’re in a rush):
+<p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/izx6HBa-Tow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+There’s a lot going on here so let’s break it down. (Headphone warning! Some of these are quite loud and harsh-sounding.)
+<p>
+First, we have the base layer. This starts playing when you enter the chamber and keeps playing until it ends.
+<p>
+<audio controls src = "media/sp_a2_ricochet_b1_01.mp3" class = "audioExample">
+<p>
+We have this track playing around the area where you pick up the first cube:
+<p>
+<audio controls src = "media/sp_a2_ricochet_x1.mp3" class = "audioExample">
+<p>
+Then a track for when the first laser receiver is activated:
+<p>
+<audio controls src = "media/sp_a2_ricochet_l1_01.mp3" class = "audioExample">
+<p>
+Then a track for when the second laser receiver is activated:
+<p>
+<audio controls src = "media/sp_a2_ricochet_l2_01.mp3" class = "audioExample">
+<p>
+And lastly, we have a few tracks that play when you launch something using the aerial faith plates:
+<p>
+<audio controls src = "media/sp_a2_ricochet_c2_01.mp3" class = "audioExample"> </audio>
+<audio controls src = "media/sp_a2_ricochet_c3_01b.mp3" class = "audioExample"> </audio>
+<p>
+If you want to mess around a bit, I've added a few buttons to make them all play in-sync. Then you can mess with the volumes to fade things in and out. They won't necessarily stay in sync for long, as in-game it's a bit more complex than this. But it's a good way to get a feel for how each part fits together.
+<p>
+<button id = "startExample">Start all in sync</button>
+<button id = "endExample">Stop all</button>
+<p>
+
+On top of this are even more tracks added on top, and it’s hard to tell but I believe a few are randomized between a few different loops. But this is more than enough to show how far vertical music can go. As you progress through the test, you’ll hear more and more of these tracks. And on top of that, all of these tracks are emitted from points in space, meaning that as you move around the test and fling yourself around it, you’ll hear some of these tracks fade in and out as well.
+<p>
+Which leads to perhaps the most interesting thing that this soundtrack does. Most music for film and games is non-diegetic, meaning that it’s purely for the audience and that the music isn’t actually playing in that world. However, Portal 2’s soundtrack is written to be diegetic. The soundtrack is written by composer Mike Morasky, but is credited to the “Aperture Science Psychoacoustics Laboratories.” This isn’t because of some licensing problem, it was a decision made by the composer himself because of how he wrote the music. The guiding principle is that all of it is being created by the facility and is in-universe, and in turn much of it even acts as sound effects. The music tracks for the two lasers in this test chamber are a perfect example of this.
+<p>
+In Morasky’s own words, “Overall the interactive musical experience tends to become one of exploration, as if the music is emanating from the facility and devices of Aperture Science itself, often giving the player total control over how much or little they want to expand that aspect of the experience.” <a href="https://www.gamesradar.com/portal-2s-dynamic-music-an-interview-with-composer-mike-morasky-and-five-tracks-to-listen-to-now/">(From an interview with gamesradar)</a> Once you’ve solved the puzzle and launch yourself from the start to the end, you hear all the interweaving parts fading in and out as you fly by lasers and get launched by aerial faith plates. It acts as a musical reward for solving the puzzle, and an excellent example of how vertical music can enhance a game.
+
+
+</span>
+</div>
+
+</div>
+</div>
+</div>
+</span>
+
+
+</div>
+</div>
+
+<script type = "text/javascript">
+
+var audioSources = document.getElementsByClassName("audioExample");
+var buttonStart = document.getElementById("startExample")
+var buttonEnd = document.getElementById("endExample")
+
+buttonStart.onclick = function(){
+	for(i = 0; i < audioSources.length; i++){
+		audioSources[i].currentTime = 0;
+		audioSources[i].loop = true;
+		audioSources[i].play();
+	}
+};
+
+buttonEnd.onclick = function(){
+	for(i = 0; i < audioSources.length; i++){
+		audioSources[i].loop = false;
+		audioSources[i].pause();
+	}
+};
+
+</script>
+
+<script type = "text/javascript" src = "../scripts/menuDropshadow.js"></script>
+<script type = "text/javascript" src = "../scripts/mobile.js"></script>
+
+</body>
+</html>
