@@ -1,0 +1,29 @@
+#blogContentWrapper{
+  position: relative;
+  display: flex;
+	vertical-align: bottom;
+	justify-content: space-between;
+}
+
+
+.box_content{
+	margin-left: 1vw;
+}
+
+#blogNavBar{
+  padding: 5px;
+	padding-left: 1vw;
+	margin-right: 0;
+  width: 45vw;
+	text-align: left;
+	opacity: 1;
+
+  background: rgba(16,91,97,1);
+  box-shadow: 0 0 10px 0 #062528;
+  position: relative;
+  z-index: 5;
+}
+#blogNavBar a:link, #blogNavBar a:visited, #blogNavBar a:hover, #blogNavBar a:active{
+	color: white;
+  text-decoration: none;
+}
