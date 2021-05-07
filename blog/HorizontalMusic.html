@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Julian Heuser</title>
+<title>Blog</title>
 <meta name="viewport" charset = "UTF-8" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Julian Heuser">
 <link rel="stylesheet" type="text/css" href="../mainStyle.css">
@@ -12,38 +12,21 @@
 <!-- Header -->
 <div id = "outer">
 <div id = "wrapper">
-	<div id = "header"><h1>Julian Heuser</h1>
-		<span class = "links">
-			<a href = "https://www.linkedin.com/in/julian-heuser/">LinkedIn</a> |
-			<a href = "https://sockman.itch.io/">itch.io</a> |
-			<a href = "https://julianheuser.bandcamp.com/">Bandcamp</a> |
-			<a href = "https://www.moddb.com/members/sockman1">ModDB</a>
-		</span>
+	<div id = "header"><h1>Music in video games: How to make music for a non-linear medium</h1>
 	</div>
 
+
+	<div id = "blogContentWrapper">
 
 	<div id = "nav_open" onclick = "openSideBar();">
 		<span></span>
 	</div>
-<!-- nav bar -->
+	<!-- nav bar -->
 	<nav id = "nav_outer">
-		<a class = "nav_button" onclick = "sectionClick('?s=0'); openSideBar();">Home</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=About&s=1'); openSideBar();">About</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=Games&s=1'); openSideBar();">Games</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=Mods&s=1'); openSideBar();">Mods</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=Music&s=1'); openSideBar();">Music</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=Other&s=1'); openSideBar();">Other</a>
+		<a href="HorizontalMusic.html"><div class = "nav_button" > Horizontal Music  </div> </a>
+		<a href="VerticalMusic.html"><div class = "nav_button" > Vertical Music </div> </a>
+		<a href="GenerativeMusic.html"><div class = "nav_button"> Generative Music </div> </a>
 	</nav>
-
-<div id = "blogContentWrapper">
-
-<!-- Side Nav Bar -->
-<div id = "blogNavBar"><h2>
-	<a href="HorizontalMusic.html"> Horizontal Music </a> <p>
-	<a href="VerticalMusic.html"> Vertical Music </a> <p>
-	<a href="HorizontalMusic.html"> Generative Music </a> <p>
-</h2></div>
-
 
 <!-- Content -->
 	<span id = "content">
@@ -53,7 +36,7 @@
 				<div class = "showcase_row">
 
 <span class = description_text>
-Video games and music go hand-in-hand. Try to think of a game released in the last 20 years without some form of music and I bet it will take you some time, if you can think of one at all. You probably have a favorite video game soundtrack too.
+Video games and music go hand-in-hand. Try to think of a game released in the last 20 years without some form of music and I bet it will take you some time, if you can think of one at all.
 <p>
 Movies and tv shows have a similar connection to music, but what makes video games unique is that the music in them has to be dynamic. While a movie composer can write for a specific moment, and time the music perfectly, a video game composer has no idea when the player will do any given action. Because of that, composers have to get creative. This blog will explore some of the different approaches composers and developers take with various games to make the music feel in-sync with the player’s actions.
 <p>
@@ -63,23 +46,23 @@ This is where horizontal resequencing and vertical reorchestration come in. Thes
 <p>
 <img src = "media/musicStaff.png">
 <p>
-Form left to right (horizontally), different notes are laid out over time. So, horizontal resequencing is just transitioning between different segments of music, and will be what we look at for this first post. (For simplicity’s sake I’ll just call them horizontal and vertical music in the future.)
+From left to right (horizontally), different notes are laid out over time. So, horizontal resequencing is just transitioning between different segments of music, and will be what we focus on for this first post.
 <p>
-The simplest use of horizontal music is cuts. The original Super Mario Bros., for example, just cuts the music out as soon as you end a level, before starting the level end theme. As hardware improved, crossfades could be used instead to make transitions less jarring. Sticking with Mario games, Super Mario 64 fades any background music out when you enter a level.
+The simplest use of horizontal resequencing is cuts. The original <i>Super Mario Bros.</i>, for example, just cuts the music out as soon as you end a level, before starting the level end theme. As hardware improved, crossfades could be used instead to make transitions less jarring. Sticking with Mario games, <i>Super Mario 64</i> fades any background music out when you enter a level.
 <p>
 <video width="560" height="315" src="media/mario64.mp4"  type="video/mp4" controls></iframe>
 <p>
-Something else Mario 64 does is change music based on location. Outside the castle, when you first start the game, only ambient sounds are present. Entering the castle triggers the castle theme to start playing until you leave it again.
+Something else this game does is change music based on location. Outside the castle, when you first start the game, only ambient sounds are present. Entering the castle triggers the castle theme to start playing until you leave it again.
 <p>
-This is all very basic stuff, and I could sit here all day naming a million games that have some form of horizontal music. But I want to point out one particularly impressive example from the classic PC game The Secret of Monkey Island 2: LeChuck’s Revenge. Listen carefully to this example:
+This is all very basic stuff, and I could sit here all day listing examples, as almost every game has some sort of fade or transition between music. But I want to point out one particularly impressive example from the classic PC game <i>The Secret of Monkey Island 2: LeChuck’s Revenge</i>. Listen carefully to this example:
 <p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7N41TEcjcvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/7N41TEcjcvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>
 Just like in Mario 64, the music transitions as the player enters different areas. But this time, there’s no crossfade or jarring cut. It’s all completely seamless. On top of that, this game came out in 1993, three years before Mario 64, and there were no software solutions yet to help make dynamic music, like Wwise or Fmod. So how did they do it?
 <p>
 The developers created their own solution from scratch, which they called iMUSE. There’s a lot of technical aspects to it but the gist is that the composers wrote a ton of transitions between music to be played at certain times in each song. Then, iMuse uses information about the game to determine what to queue up and play. Essentially, the game is constantly generating a playlist for itself, and rather than crossfading, a composed transition is played instead to make everything much more seamless. And all of it is based on the player’s actions. If you want to know more about the finer details <a href="https://mixnmojo.com/features/sitefeatures/LucasArts-Secret-History-Monkey-Island-2-LeChucks-Revenge/9">this article does a good job covering it.</a>
 <p>
-Next post we’ll look into a particularly interesting example of vertical integration in Portal 2.
+Next post we’ll look into a particularly interesting example of vertical reorchestration in Portal 2.
 </span>
 </div>
 
@@ -92,7 +75,6 @@ Next post we’ll look into a particularly interesting example of vertical integ
 </div>
 </div>
 
-<script type = "text/javascript" src = "../scripts/menuDropshadow.js"></script>
 <script type = "text/javascript" src = "../scripts/mobile.js"></script>
 
 </body>

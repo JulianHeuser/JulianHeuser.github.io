@@ -12,38 +12,20 @@
 <!-- Header -->
 <div id = "outer">
 <div id = "wrapper">
-	<div id = "header"><h1>Julian Heuser</h1>
-		<span class = "links">
-			<a href = "https://www.linkedin.com/in/julian-heuser/">LinkedIn</a> |
-			<a href = "https://sockman.itch.io/">itch.io</a> |
-			<a href = "https://julianheuser.bandcamp.com/">Bandcamp</a> |
-			<a href = "https://www.moddb.com/members/sockman1">ModDB</a>
-		</span>
+	<div id = "header"><h1>Music in video games: How to make music for a non-linear medium</h1>
 	</div>
 
+	<div id = "blogContentWrapper">
 
-	<div id = "nav_open" onclick = "openSideBar();">
+<div id = "nav_open" onclick = "openSideBar();">
 		<span></span>
 	</div>
-<!-- nav bar -->
+	<!-- nav bar -->
 	<nav id = "nav_outer">
-		<a class = "nav_button" onclick = "sectionClick('?s=0'); openSideBar();">Home</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=About&s=1'); openSideBar();">About</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=Games&s=1'); openSideBar();">Games</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=Mods&s=1'); openSideBar();">Mods</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=Music&s=1'); openSideBar();">Music</a>
-		<a class = "nav_button" onclick = "sectionClick('?filter=Other&s=1'); openSideBar();">Other</a>
+		<a href="HorizontalMusic.html"><div class = "nav_button" > Horizontal Music  </div> </a>
+		<a href="VerticalMusic.html"><div class = "nav_button" > Vertical Music </div> </a>
+		<a href="GenerativeMusic.html"><div class = "nav_button"> Generative Music </div> </a>
 	</nav>
-
-<div id = "blogContentWrapper">
-
-<!-- Side Nav Bar -->
-<div id = "blogNavBar"><h2>
-	<a href="HorizontalMusic.html"> Horizontal Music </a> <p>
-	<a href="VerticalMusic.html"> Vertical Music </a> <p>
-	<a href="HorizontalMusic.html"> Generative Music </a> <p>
-</h2></div>
-
 
 <!-- Content -->
 	<span id = "content">
@@ -53,15 +35,15 @@
 				<div class = "showcase_row">
 
 <span class = description_text>
-Last time we talked about horizontal music, so this time we’ll talk about it’s complement: vertical music. To best understand vertical music, let’s look at the staff from the last post again:
+Last time we talked about horizontal resequencing, so this time we’ll talk about it’s complement: vertical reorchestration. To best understand vertical reorchestration, let’s look at the staff from the last post again:
 <p>
 <img src = "media/musicStaff.png">
 <p>
-Different instruments are laid out from top to bottom (vertically), so vertical music is simply adding or removing these different instruments, or tracks, over time. One of the earliest and most simple examples of this is in Super Mario World, where riding Yoshi would enable accompanying bongos. The important thing to note here is that the original music is still playing, there’s just another layer added on top of it.
+Different instruments are laid out from top to bottom (vertically), so vertical reorchestration is simply adding or removing these different instruments, or tracks, over time. A simple example of this is in <i>Super Mario World</i>, where riding Yoshi enables accompanying bongos. Note that the original music is still playing, there’s just another layer added on top of it.
 <p>
 <video width="560" height="315" src="media/smw.mp4"  type="video/mp4" controls></iframe>
 <p>
-For a more complex example, the game we’ll look at is Portal 2. Portal 2 has a lot of dynamic music, including horizontal and even some generative music (which we’ll get to later!). But vertical music is probably its most utilized technique.
+For a more complex example, the game we’ll look at is Portal 2. Portal 2 has a lot of dynamic music, including horizontal resequencing and even some generative music (which we’ll get to later!). But vertical reorchestration is probably its most utilized technique.
 <p>
 To start off, let’s look at an example from test chamber 10, one of the earlier puzzles in the game. This includes quite a few mechanics, including lasers, aerial faith plates which launch the player in the air, and cubes with buttons. Watch this walkthrough and listen carefully (although feel free to skip around if you’re in a rush):
 <p>
@@ -96,12 +78,11 @@ If you want to mess around a bit, I've added a few buttons to make them all play
 <button id = "endExample">Stop all</button>
 <p>
 
-On top of this are even more tracks added on top, and it’s hard to tell but I believe a few are randomized between a few different loops. But this is more than enough to show how far vertical music can go. As you progress through the test, you’ll hear more and more of these tracks. And on top of that, all of these tracks are emitted from points in space, meaning that as you move around the test and fling yourself around it, you’ll hear some of these tracks fade in and out as well.
+There are even more tracks being used, but this is more than enough to show how far vertical reorchestration can go. As you progress through the test, you’ll hear more and more of these tracks. And on top of that, all of these tracks are emitted from points in space, meaning that as you move and fling yourself around the chamber, you’ll hear some of these tracks naturally fade in and out as you get closer or further away from where they're being emitted.
 <p>
-Which leads to perhaps the most interesting thing that this soundtrack does. Most music for film and games is non-diegetic, meaning that it’s purely for the audience and that the music isn’t actually playing in that world. However, Portal 2’s soundtrack is written to be diegetic. The soundtrack is written by composer Mike Morasky, but is credited to the “Aperture Science Psychoacoustics Laboratories.” This isn’t because of some licensing problem, it was a decision made by the composer himself because of how he wrote the music. The guiding principle is that all of it is being created by the facility and is in-universe, and in turn much of it even acts as sound effects. The music tracks for the two lasers in this test chamber are a perfect example of this.
+Which leads to perhaps the most interesting thing that this soundtrack does. Most music for film and games is non-diegetic, meaning that it’s purely for the audience, and that the music isn’t actually playing in that world. However, Portal 2’s soundtrack is written to be diegetic. The soundtrack is written by composer Mike Morasky, but is credited to the “Aperture Science Psychoacoustics Laboratories.” This isn’t because of some licensing problem, it was a decision made by the composer himself because of how he wrote the music. The guiding principle is that all of it is being created by the facility and is in-universe, and in turn much of it acts as sound effects. By treating all the music as diegetic, it ends up playing a key role in the game's puzzles. The two lasers in this test chamber are a perfect example of this. Each play a unique track when activated, which makes them easily identifiable. If they just used a sound effect they would be indistinguishable, not to mention it would make the chamber a bit less compelling.
 <p>
-In Morasky’s own words, “Overall the interactive musical experience tends to become one of exploration, as if the music is emanating from the facility and devices of Aperture Science itself, often giving the player total control over how much or little they want to expand that aspect of the experience.” <a href="https://www.gamesradar.com/portal-2s-dynamic-music-an-interview-with-composer-mike-morasky-and-five-tracks-to-listen-to-now/">(From an interview with gamesradar)</a> Once you’ve solved the puzzle and launch yourself from the start to the end, you hear all the interweaving parts fading in and out as you fly by lasers and get launched by aerial faith plates. It acts as a musical reward for solving the puzzle, and an excellent example of how vertical music can enhance a game.
-
+In Morasky’s own words, <a href = "https://www.gamesradar.com/portal-2s-dynamic-music-an-interview-with-composer-mike-morasky-and-five-tracks-to-listen-to-now/">“Overall the interactive musical experience tends to become one of exploration, as if the music is emanating from the facility and devices of Aperture Science itself, often giving the player total control over how much or little they want to expand that aspect of the experience.”</a> Once you’ve solved the puzzle and launch yourself from the start to the end, you hear all the interweaving parts fading in and out as you fly by lasers and get launched by aerial faith plates. It acts as a musical reward for solving the puzzle, and an excellent example of how vertical reorchestration can enhance a game.
 
 </span>
 </div>
@@ -138,7 +119,6 @@ buttonEnd.onclick = function(){
 
 </script>
 
-<script type = "text/javascript" src = "../scripts/menuDropshadow.js"></script>
 <script type = "text/javascript" src = "../scripts/mobile.js"></script>
 
 </body>

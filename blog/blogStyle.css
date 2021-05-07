@@ -1,4 +1,39 @@
+
+#content iframe, #content video, #content img{
+  width: 560px;
+}
+#content iframe{
+  width: 560px;
+  height: 315px;
+}
+
+#content button{
+  border: none;
+  background-color: darkgrey;
+  padding: 10px;
+  border-radius: 5px;
+}
+#content button:active{
+  background-color: lightgrey;
+}
+
+.box_content a:link, .box_content a:visited, .box_content a:hover, .box_content a:active{
+  color: default;
+	color: revert;
+}
+
+#header{
+  position: fixed;
+  top: 0;
+  z-index: -99;
+}
+#header h1{
+  text-align: left;
+  font-size: 3vw;
+}
+
 #blogContentWrapper{
+  margin-top: 100px;
   position: relative;
   display: flex;
 	vertical-align: bottom;
@@ -10,11 +45,11 @@
 	margin-left: 1vw;
 }
 
-#blogNavBar{
-  padding: 5px;
-	padding-left: 1vw;
+#nav_outer{
+  height: auto;
+
 	margin-right: 0;
-  min-width: 11vw;
+  min-width: 10%;
 	text-align: left;
 	opacity: 1;
 
@@ -22,8 +57,90 @@
   box-shadow: 0 0 10px 0 #062528;
   position: relative;
   z-index: 5;
+	display: block;
 }
-#blogNavBar a:link, #blogNavBar a:visited, #blogNavBar a:hover, #blogNavBar a:active{
+#nav_outer a:link, #nav_outer a:visited, #nav_outer a:hover, #nav_outer a:active{
 	color: white;
   text-decoration: none;
+}
+
+.nav_button{
+  padding: 0;
+  font-size: 1vw;
+  min-width: 0;
+  padding: 1vw;
+}
+
+#content{
+  min-width: 0;
+}
+
+.box_outer{
+  background: #f2fdff;
+  color: black;
+  overflow: hidden;
+}
+
+.description_text{
+  min-width: 0;
+}
+
+/*Mobile support*/
+@media only screen and (orientation: portrait) {
+  #nav_outer{
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		z-index: 50;
+		justify-content: flex-start;
+		background-image: none;
+		background-color: rgb(16,91,97);
+		top: 0;
+		left: -500px;
+		transition: left .2s ease;
+		padding-top: 20vw;
+		width: 50vw;
+		word-wrap: break-word;
+		box-shadow: 0 0 10px 0 #062528;
+    height: 100%;
+	}
+	#nav_outer.open{
+		left: 0;
+	}
+
+  .nav_button{
+    padding: 0;
+    font-size: 5vw;
+  }
+
+  .section_header{
+		position: relative;
+		top: 0;
+		background-image: none;
+		z-index: 3;
+		height: auto;
+		display: block;
+		align-items: auto;
+    justify-content: space-around;
+		padding: 5vw;
+		font-size: 10vw;
+	}
+
+  h2{
+  		font-size: 3vw;
+  }
+
+  #header h1{
+    font-size: 5vw;
+    text-align: center;
+  }
+
+  #content iframe, #content video, #content img{
+    width: 100%;
+    height: auto;
+  }
+  #content iframe{
+    height: 315px;
+  }
+
 }

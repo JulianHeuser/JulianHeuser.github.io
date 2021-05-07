@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Julian Heuser</title>
+<meta name="viewport" charset = "UTF-8" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Julian Heuser">
+<link rel="stylesheet" type="text/css" href="../mainStyle.css">
+<link rel="stylesheet" type="text/css" href="blogStyle.css">
+</head>
+
+<body>
+<!-- Header -->
+<div id = "outer">
+<div id = "wrapper">
+	<div id = "header"><h1>Music in video games: How to make music for a non-linear medium</h1>
+	</div>
+
+
+	<div id = "blogContentWrapper">
+
+	<div id = "nav_open" onclick = "openSideBar();">
+		<span></span>
+	</div>
+	<!-- nav bar -->
+	<nav id = "nav_outer">
+		<a href="HorizontalMusic.html"><div class = "nav_button" > Horizontal Music  </div> </a>
+		<a href="VerticalMusic.html"><div class = "nav_button" > Vertical Music </div> </a>
+		<a href="GenerativeMusic.html"><div class = "nav_button"> Generative Music </div> </a>
+	</nav>
+
+
+
+
+<!-- Content -->
+	<span id = "content">
+		<div class = "box_outer">
+			<div class = "box_content">
+				<h2 class = "section_header"><div class = "section_header_spacer"></div><span class = "section_textlabel">Generative Music in No Man's Sky</span></h2>
+				<div class = "showcase_row">
+
+<span class = description_text>
+	The techniques talked about so far (vertical and horizontal) still rely on composed music. Different bits of composed music can transition between each other or fade in and out, but making all that music and setting up the logic for those transitions and fades takes a lot of work. The games we’ve looked at so far are fairly linear, so the developers and composers can still do all that in a reasonable time. But what if you have a game that’s big? So big that there’s no possible way to score every scenario the player can find themselves in?
+	<p>
+	That’s where generative (or algorithmic) music comes in. Generative music is a fairly broad category that exists outside of video games, but in essence it’s any music that’s created by an algorithm. A very simple form of generative music would be a program that outputs random pitches for random amounts of time. Of course, this would sound horrible, so you’d probably want a more complex system in a game.
+	<p>
+	It’s important to note that generative music doesn’t mean there isn’t any composition work done. Often certain musical phrases are composed and an algorithm just makes small adjustments or selects from a randomized group. Arguably, horizontal resequencing and vertical reorchestration are just subsets of generative music, although it’s much broader and there’s lots of generative music that isn’t strictly vertical or horizontal.
+	<p>
+	Let's look at an example. This is the music of Ballblazer, one of the earliest examples of generative music in a game:
+	<p>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/aL7O39Y5RSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<p>
+	It’s pretty good, but you might notice its limitations. Generative music often runs into at least one of two problems: repetitiveness, or blandness. Even with variation this has, it's easy to mistake it for a simple loop due to its repetition. On the other hand, in the earlier example of random notes being played, it might be extremely varied and almost never repeat, but there’s not likely to be anything meaningful in the music. With only random numbers making decisions, there’s none of the emotion and storytelling that goes into any handcrafted song.
+	<p>
+	To try to figure out how to fix this problem, we’ll look at a more modern game: No Man’s Sky. This game aims to score an entire universe with over 18 quintillion planets. Not a small feat.
+	<p>
+	The task of scoring this universe was split between the developer, Hello Games, and the experimental post-rock band 65daysofstatic (or 65dos). Somewhat counter to the idea of generative music, 65dos began by composing an album. The purpose of this was to get at all the emotional qualities that the music would provide, helping prevent the resulting in-game music from feeling bland and uninspired.
+	<p>
+	From there, they “atomized” the album, breaking it apart into different layers and musical bits, with several different variations on all those parts. Much of the in-game music is new but it’s all derived in some part from the album.
+	<p>
+	The band talks a lot more about the process of making the album and making it work in-game in this talk. Around 11 minutes in there’s also a demonstration of how it fits together.
+	<p>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/Y3Jm8hDbPO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<p>
+	When it comes to generative music, composition is only one small part of the picture. The rest of it is how all those bits of music are implemented, and how the game decides what to play and when. That job was primarily that of Paul Weir of Hello Games, who built the system to make those decisions. <a href="https://www.gdcvault.com/play/1024067/The-Sound-of-No-Man">He goes into a lot of detail in a GDC talk,</a> but I’ll try to distill the relevant bits here.
+	<p>
+	 Most games use event-driven audio, which means one event, like a laser being activated, will cause a sound to play. All the audio in No Man's Sky is state driven instead, meaning that there are numerous states that the game can be in, and based on the state, the audio will change accordingly. This is similar to how a lot of AI works in games, and can lead to much more diverse behavior, rather than the specific behavior of event driven audio. In terms of No Man’s Sky, these states can be based on the planet the player is on, the weather, whether or not they’re in combat, if they’re indoors or outdoors, etc..
+	<p>
+	Alongside with states, music is also controlled by many parameters, such as interest level or sound direction. Depending on the current state, the factors that determine these parameters are different. Some examples of these factors are where the player is looking or how long they’ve been walking.
+	<p>
+	The same systems that dictate this state are used for both sound effects and music, so both are intertwined with each other. While the music isn’t entirely diegetic, it’s still part of the overall soundscape of the game and treated on the same level as the sound effects.
+	<p>
+	The emotional aspects brought by the band’s compositions, alongside the use of states and audio design lead to an extremely dynamic experience. It still shows some of the same problems as other generative music since there’s only so many different sounds that can be put in the game, but most of the time it manages to create new and interesting musical bits. And by design, it’s meant to mostly fade into the background as the player goes about their business.
+	<p>
+	However, occasionally, the system will work just right and make for a perfect moment. It will detect a large, open vista the player is looking out at and start a slow, contemplative piano, and it all just works together perfectly. These moments are the hardest to create with generative music; it’s very hard for an algorithm to know what beauty is or when we’ll stop to appreciate it. But it’s also the best part of generative music, as it amplifies these moments of beauty that the creators might not ever be aware of. And it’s something that No Man’s Sky does very well.
+	<p>
+	(Here's a short bit of gameplay to show an example of some of the music in-game. Excuse the framedrops.)
+	<video width="560" height="315" src="media/nms_example.mp4"  type="video/mp4" controls></iframe>
+
+</span>
+</div>
+
+</div>
+</div>
+</div>
+</span>
+
+
+</div>
+</div>
+
+<script type = "text/javascript" src = "../scripts/mobile.js"></script>
+
+</body>
+</html>
