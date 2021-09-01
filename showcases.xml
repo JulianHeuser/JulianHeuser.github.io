@@ -78,13 +78,22 @@
 	</Mods>
 
 	<Music>
-			<showcase_important>
-				<title>Pillars</title>
-				<desc>An album with remasters of some older tracks along with two new tracks</desc>
-				<img>images/pillars.jpg</img>
-				<link>https://julianheuser.bandcamp.com/album/pillars</link>
-				<enddate>1/2021</enddate>
-			</showcase_important>
+		
+		<showcase_important>
+			<title>Various Experiments</title>
+			<desc>A number of electronic tracks made since the beginning of 2021 that experiment with different sounds, styles, and tones.</desc>
+			<img>images/various_experiments.jpg</img>
+			<link>https://julianheuser.bandcamp.com/album/various-experiments</link>
+			<enddate>6/2021</enddate>
+		</showcase_important>
+	
+		<showcase_important>
+			<title>Pillars</title>
+			<desc>An album with remasters of some older tracks along with two new tracks</desc>
+			<img>images/pillars.jpg</img>
+			<link>https://julianheuser.bandcamp.com/album/pillars</link>
+			<enddate>1/2021</enddate>
+		</showcase_important>
 
 		<showcase_important>
 			<title>SubDivide Soundtrack</title>
