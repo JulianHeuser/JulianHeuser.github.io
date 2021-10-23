@@ -249,14 +249,10 @@ h1{
 #footer{
 }
 
-/*
-.footer_content{
-	display: flex;
+/*For preventing email spambots*/
+.cryptedmail:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
 }
-.footer_column{
-	margin-right: 10px;
-}
-*/
 
 /*IE11 support*/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
