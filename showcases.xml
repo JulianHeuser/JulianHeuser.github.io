@@ -2,6 +2,14 @@
 <root>
 	<Games>
 		<showcase_important>
+			<title>Restocked</title>
+			<desc>Made in 48 hours for a game jam hosted by the RIT game dev club. The theme was "Out of Stock"</desc>
+			<img>images/restocked.jpg</img>
+			<link>https://sockman.itch.io/restocked</link>
+			<enddate>5/2021</enddate>
+		</showcase_important>
+		
+		<showcase_important>
 			<title>Subdivide</title>
 			<desc>A game about dividing the world. Made during my senior year of high school</desc>
 			<img>images/subdivide.jpg</img>
@@ -17,13 +25,13 @@
 			<enddate>8/2019</enddate>
 		</showcase_important>
 
-		<showcase_important>
+		<showcase>
 			<title>Protect Him</title>
 			<desc>Made in 72 hours for Ludum Dare 43</desc>
 			<img>images/protecthim.jpg</img>
 			<link>https://sockman.itch.io/protecthim</link>
 			<enddate>12/2018</enddate>
-		</showcase_important>
+		</showcase>
 
 		<showcase>
 			<title>Gravity Roll</title>
@@ -40,7 +48,6 @@
 			<link>https://www.indiedb.com/games/zero-g</link>
 			<enddate>9/2018</enddate>
 		</showcase>
-
 	</Games>
 
 	<Mods>
@@ -78,7 +85,6 @@
 	</Mods>
 
 	<Music>
-		
 		<showcase_important>
 			<title>Various Experiments</title>
 			<desc>A number of electronic tracks made since the beginning of 2021 that experiment with different sounds, styles, and tones.</desc>
@@ -113,4 +119,5 @@
 			<enddate>7/2020</enddate>
 		</showcase_important>
 	</Other>
+
 </root>
