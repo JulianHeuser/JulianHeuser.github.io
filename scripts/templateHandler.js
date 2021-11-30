@@ -78,7 +78,7 @@ function createClone(element){
 
 //Global vars
 var filterParamName = "filter";
-var maxShowcasePerRow = 3;
+const maxShowcasePerRow = 3;
 var urlParams = new URLSearchParams(window.location.search);
 var temp_showcase = document.getElementsByTagName("template")[0];
 var temp_section = document.getElementsByTagName("template")[1];
@@ -160,7 +160,7 @@ function displaySection(name, onlyImportant){
     innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "";
   }
   else{
-    if(urlParams.has(filterParamName)){
+	if(urlParams.has(filterParamName)){
       innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Back";
       innerContent.getElementsByClassName("section_showmore")[0].addEventListener("click", function() { sectionClick("?"); }, false);
 	 }
@@ -189,9 +189,10 @@ function displaySection(name, onlyImportant){
 		//Set image
 		element.querySelector("img").src = showcase[k].getElementsByTagName("img")[0].childNodes[0].nodeValue;
 		//Set title/description
-		var labels = element.getElementsByTagName("p");
-		labels[0].innerHTML = showcase[k].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-		labels[1].innerHTML = showcase[k].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
+		var title = element.getElementsByTagName("h3")[0];
+		var desc = element.getElementsByTagName("p")[0];
+		title.innerHTML = showcase[k].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+		desc.innerHTML = showcase[k].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
 		//Set link
 		element.querySelector("a").href = showcase[k].getElementsByTagName("link")[0].childNodes[0].nodeValue;
 	}

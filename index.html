@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Julian Heuser</title>
 <meta name="viewport" charset = "UTF-8" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
 <!-- Header -->
 <div id = "outer">
 <div id = "wrapper">
@@ -26,7 +27,7 @@
 			<div class = "shadow"></div>
 			<div class = "img_container"><img></div>
 			<a href = "#subdivide"><div class = "showcase_text" id = "desc_subdivide">
-			<p class = "showcase_heading"></p>
+			<h3 class = "showcase_heading"></h3>
 			<p class = "showcase_desc"></p>
 			</div></a>
 	</template>
@@ -60,7 +61,8 @@
 	<div id = "nav_open" onclick = "openSideBar();">
 		<span></span>
 	</div>
-<!-- nav bar -->
+	
+	<!-- Nav bar -->
 	<nav id = "nav_outer">
 		<a class = "nav_button" onclick = "sectionClick('?s=0'); openSideBar();">Home</a>
 		<a class = "nav_button" onclick = "sectionClick('?filter=About&s=1'); openSideBar();">About</a>
@@ -70,25 +72,35 @@
 		<a class = "nav_button" onclick = "sectionClick('?filter=Other&s=1'); openSideBar();">Other</a>
 	</nav>
 
-<!-- Content (added by javascript) -->
+	<!-- Content (added by javascript) -->
 	<span id = "content"></span>
 
+	<!-- Footer -->
 	<div id = "footer" class = "box_outer" >
-		<div class = "box_content footer_content">
-			<div class  = "footer_column">
-				<h2 class = "section_header">Links</h2>
 
-
-				<p class = "description_text"><a href = "https://www.linkedin.com/in/julian-heuser/">LinkedIn</a></p>
-				<p class = "description_text"><a href = "https://github.com/JulianHeuser">GitHub</a></p>
-				<p class = "description_text"><a href = "https://gitlab.com/Sockman">GitLab</a></p>
-				<p class = "description_text">Email:
-					<a href="#" class="cryptedmail"
-   					data-name="julianheuser"
-   					data-tld="com"
-   					data-domain="outlook"
-   					onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"></a> </p>
-
+		<div class = "box_content">
+			<h2 class = "section_header">Links</h2>
+			<div class = "footer_content">
+				<div class  = "footer_column">
+					<p>
+						<a href="#" class="cryptedmail"
+						data-name="julianheuser"
+						data-tld="com"
+						data-domain="outlook"
+						onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">
+						Email
+						</a>
+					</p>
+					<p><a href = "https://www.linkedin.com/in/julian-heuser/">LinkedIn</a></p>
+					<p><a href = "https://github.com/JulianHeuser">GitHub</a></p>
+					<p><a href = "https://gitlab.com/Sockman">GitLab</a></p>
+				</div>
+				<div class = "footer_column">
+					<p><a href = "https://twitter.com/SockmanJH">Twitter</a></p>
+					<p><a href = "https://www.youtube.com/c/Sockman1/videos">YouTube</a></p>
+					<p><a href = "https://sockman.itch.io/">Itch.io</a></p>
+					<p><a href = "https://www.moddb.com/members/sockman1">ModDB</a></p>
+				</div>
 			</div>
 		</div>
 	</div>
