@@ -1,10 +1,8 @@
-//For IE support, all new fancy stuff is put into this script
-//It will only be used if the browser isn't internet explorer.
+//For IE support, this script is separated out so it won't cause all JS to fail on IE
 //And if you're readying this please don't use Internet Explorer. please.
 
+
 //Detect if screen is scrolled past header
-
-
 var ham_open = document.getElementById("nav_open");
 var observer = new IntersectionObserver(
   function([e]){ ham_open.classList.toggle("pinned", e.intersectionRatio < 1);
