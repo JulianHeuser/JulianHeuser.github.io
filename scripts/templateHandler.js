@@ -1,7 +1,6 @@
 //IE11/10 crap - Thank you stackoverflow: https://stackoverflow.com/questions/45758837/script5009-urlsearchparams-is-undefined-in-ie-11
 var isIE = (!!window.MSInputMethodContext && !!document.documentMode) || (navigator.userAgent.indexOf('MSIE') > 1);
 if(isIE){
-
 	//Define URLSearchParams
 	(function (w) {
     	w.URLSearchParams = w.URLSearchParams || function (searchString) {
@@ -16,57 +15,48 @@ if(isIE){
                 	return decodeURI(results[1]) || 0;
             	}
         	};
-					self.has = function (name) {
-						var results = new RegExp('[\?&]' + name).exec(self.searchString);
-						if (results == null) {
-							return null;
-						}
-						else {
-							return true;
-						}
-					}
+			self.has = function (name) {
+				var results = new RegExp('[\?&]' + name).exec(self.searchString);
+				if (results == null) {
+					return null;
+				}
+				else {
+					return true;
+				}
+			}
     	}
+	})(window)
 
-		})(window)
-
-		//Define remove function
-		Element.prototype.remove = function() {
-        if (this.parentNode) {
-            this.parentNode.removeChild(this);
-        }
-    };
+	//Define remove function
+	Element.prototype.remove = function() {
+		if (this.parentNode) {
+			this.parentNode.removeChild(this);
+		}
+	};
 
 	//Define .children
 	(function(constructor) {
-  	if (constructor &&
-    	constructor.prototype &&
-    	constructor.prototype.children == null) {
-    	Object.defineProperty(constructor.prototype, 'children', {
-      	get: function() {
-        	//let i = 0, node, nodes = this.childNodes, children = [];
-					var i = 0;
-					var node;
-					var nodes = this.childNodes;
-					var children = [];
-        	while (node = nodes[i++]) {
-          	if (node.nodeType === 1) {
-            	children.push(node);
-          	}
-        	}
-        	return children;
-      	}
-    	});
-  	}
+		if (constructor && constructor.prototype && constructor.prototype.children == null) {
+				Object.defineProperty(constructor.prototype, 'children', {
+					get: function() {
+						//let i = 0, node, nodes = this.childNodes, children = [];
+						var i = 0;
+						var node;
+						var nodes = this.childNodes;
+						var children = [];
+						while (node = nodes[i++]) {
+							if (node.nodeType === 1) {
+								children.push(node);
+							}
+						}
+						return children;
+					}
+				});
+			}
 	})(window.Node || window.Element);
 }
 
-//More IE support - use other scripts if we're not in IE
-//if (!isIE){
-//  var script = document.createElement('script');
-//  script.src = "/menu_dropshadow.js";
-//  document.getElementsByTagName("body")[0].insertBefore(script, document.getElementsByTagName("script")[0]);
-//}
-
+//Clone an HTML element
 function createClone(element){
 	var clone = isIE ? element.cloneNode(true) : element.content.cloneNode(true);
 	if(isIE){
@@ -75,18 +65,24 @@ function createClone(element){
 	return clone;
 }
 
-
 //Global vars
-var filterParamName = "filter";
+const filterParamName = "filter";
 const maxShowcasePerRow = 3;
 var urlParams = new URLSearchParams(window.location.search);
-var temp_showcase = document.getElementsByTagName("template")[0];
-var temp_section = document.getElementsByTagName("template")[1];
-var temp_about = document.getElementsByTagName("template")[2];
-var temp_content = document.getElementsByTagName("template")[3];
+const temp_showcase = document.getElementsByTagName("template")[0];
+const temp_section = document.getElementsByTagName("template")[1];
+const temp_about = document.getElementsByTagName("template")[2];
+const temp_content = document.getElementsByTagName("template")[3];
 
-
-
+//Templates
+const template_showcase = ({ title, desc, img }) => "\
+	<div class = \"shadow\"></div> \
+		<div class = \"img_container\"><img src = ${img}></div>\
+			<a href = \"#subdivide\"><div class = \"showcase_text\" id = \"desc_subdivide\">\
+				<h3 class = \"showcase_heading\">${title}</h3>\
+				<p class = \"showcase_desc\">${desc}</p>\
+			</div></a>\
+	</template>"
 
 //Template handling
 //Open XML
@@ -122,13 +118,13 @@ function sectionClick(name){
 }
 
 
-
 //Creates an "emptyDiv" element for spacing
 function createSpaceDiv(location){
 		var emptyDiv = document.createElement("div");
 		emptyDiv.className = "box_empty";
 		location.appendChild(emptyDiv);
 }
+
 
 //Creates and displays a section from XML
 function displaySection(name, onlyImportant){
@@ -137,7 +133,6 @@ function displaySection(name, onlyImportant){
 	//Get showcase rows and content span
 	var rows = document.getElementsByClassName("showcase_row");
 	var start = document.getElementById("content");
-
 
 	//Add elements to document
 	var showcase;
@@ -156,19 +151,19 @@ function displaySection(name, onlyImportant){
 	var innerContent = start.appendChild(outerdiv);
 	innerContent.getElementsByClassName("section_textlabel")[0].innerHTML = section.tagName;
 
-  if(urlParams.has("s") && urlParams.get("s") > 0){
-    innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "";
-  }
-  else{
-	if(urlParams.has(filterParamName)){
-      innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Back";
-      innerContent.getElementsByClassName("section_showmore")[0].addEventListener("click", function() { sectionClick("?"); }, false);
+	if(urlParams.has("s") && urlParams.get("s") > 0){
+		innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "";
+	}
+	else{
+		if(urlParams.has(filterParamName)){
+		  innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Back";
+		  innerContent.getElementsByClassName("section_showmore")[0].addEventListener("click", function() { sectionClick("?"); }, false);
 	 }
 	 else{
       innerContent.getElementsByClassName("section_showmore")[0].innerHTML = "Show All";
 		  innerContent.getElementsByClassName("section_showmore")[0].addEventListener("click", function() { sectionClick("?" + filterParamName +"=" + section.tagName); }, false);
 	 }
- }
+	}
 
 	var row = 0;
 	var currentRow = innerContent.getElementsByClassName("showcase_row")[0];
