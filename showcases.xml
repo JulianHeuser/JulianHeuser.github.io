@@ -86,7 +86,15 @@
 
 	<Music>
 		<showcase_important>
-			<title>Various Experiments</title>
+			<title>All of Nothing at Once</title>
+			<desc>An album created with the goal of being a cohesive whole, rather than just a collection of tracks.</desc>
+			<img>images/all_of_nothing_at_once.jpg</img>
+			<link>https://julianheuser.bandcamp.com/album/all-of-nothing-at-once</link>
+			<enddate>2/2022</enddate>
+		</showcase_important>
+		
+		<showcase_important>
+			<title>Various Experiments</title>S
 			<desc>A number of electronic tracks made since the beginning of 2021 that experiment with different sounds, styles, and textures.</desc>
 			<img>images/various_experiments.jpg</img>
 			<link>https://julianheuser.bandcamp.com/album/various-experiments</link>
@@ -101,13 +109,13 @@
 			<enddate>1/2021</enddate>
 		</showcase_important>
 
-		<showcase_important>
+		<showcase>
 			<title>SubDivide Soundtrack</title>
 			<desc>The soundtrack composed for my game, SubDivide.</desc>
 			<img>images/subdivide_soundtrack.jpg</img>
 			<link>https://julianheuser.bandcamp.com/album/subdivide-ost</link>
 			<enddate>8/2020</enddate>
-		</showcase_important>
+		</showcase>
 	</Music>
 
 	<Other>
