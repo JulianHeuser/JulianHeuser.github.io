@@ -10,22 +10,12 @@
         {% include info_top.html %}
         {% include nav_bar.html %}
             <main>
-              <span id = "content">
-              {% assign name = "Games" %}
-              {% include section.html %}
-              <div class="box_empty"></div>
-
-              {% assign name = "Mods" %}
-              {% include section.html %}
-              <div class="box_empty"></div>
-
-              {% assign name = "Music" %}
-              {% include section.html %}
-              <div class="box_empty"></div>
-
-              {% assign name = "Other" %}
-              {% include section.html %}
-              <div class="box_empty"></div>
+                {% for category in site.data.showcases %}
+                  <span id = "content">
+                  {% assign name = {{category.title}} %}
+                  {% include section.html %}
+                  <div class="box_empty"></div>
+                {% endfor %}
               </span>
             </main>
         </div>
