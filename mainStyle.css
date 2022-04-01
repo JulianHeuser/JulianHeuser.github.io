@@ -84,7 +84,6 @@ h3{
 #outer {
 	margin: 0;
 	width: auto;
-	height: 100%;
 	text-align: center;
 }
 
@@ -221,7 +220,6 @@ h3{
 /*Nav*/
 #nav_outer{
 	background-image: linear-gradient(to right, #1a8e99 , #062528);
-	height: 100%;
 	display: flex;
 	justify-content: center;
 	position: sticky;
@@ -241,6 +239,8 @@ h3{
 	transition: background-color .2s ease;
 	min-width: 128px;
 	cursor: pointer;
+	color: white;
+	text-decoration: none;
 }
 .nav_button:hover{
 	background-color: rgba(0, 0, 0, 0.5);

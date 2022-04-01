@@ -1,0 +1,20 @@
+<html>
+  {% include header.html %}
+
+  <link rel="stylesheet" type="text/css" href="mainStyle.css">
+
+
+  <body>
+    <div id = "outer">
+        <div id = "wrapper">
+        {% include info_top.html %}
+        {% include nav.html %}
+            <main>
+                <span id = "content"></span>
+            </main>
+        </div>
+    </div>
+    {% include footer.html %}
+  </body>
+  
+</html>
