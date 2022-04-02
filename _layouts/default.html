@@ -1,8 +1,8 @@
 <html>
+
   {% include header.html %}
 
   <link rel="stylesheet" type="text/css" href="mainStyle.css">
-
 
   <body>
     <div id = "outer">
@@ -10,17 +10,31 @@
         {% include info_top.html %}
         {% include nav_bar.html %}
             <main>
-                {% for category in site.data.showcases %}
-                  <span id = "content">
-                  {% assign name = {{category.name}} %}
+              <span id = "content">
+                {% if page.categories == "all" %}
+                  
+                  {% for category in site.data.showcases %}
+
+                    {% assign name = category.category %}
+                    {% include section.html %}
+                    <div class="box_empty"></div>
+                  {% endfor %}
+
+                {% else %}
+                 
+                  {% assign name = page.categories %}
                   {% include section.html %}
-                  <div class="box_empty"></div>
-                {% endfor %}
+                  <div class="box_empty"></div> 
+
+                {% endif %}
+
               </span>
             </main>
         </div>
     </div>
+
     {% include footer.html %}
+
   </body>
   
 </html>

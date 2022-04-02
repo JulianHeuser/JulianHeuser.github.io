@@ -3,8 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: home
-categories: all
+title: Games
+categories: Games
 is_custom: false
 
 ---

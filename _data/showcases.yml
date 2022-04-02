@@ -1,5 +1,4 @@
-- category:
-  name: Games
+- category: Games
   showcases:
     - title: Restocked
       desc: Made in 48 hours for a game jam hosted by the RIT game dev club. The theme was "Out of Stock."
@@ -35,8 +34,7 @@
       link: https://www.indiedb.com/games/zero-g
       enddate: 9/2018
 
-- category:
-  name: Mods
+- category: Mods
   showcases:
   - title: Darkness
     desc: 'A map created for the VR game Half-Life: Alyx.'
@@ -62,8 +60,7 @@
     link: https://www.moddb.com/mods/half-life-randomizer
     enddate: 5/2020
 
-- category:
-  name: Music
+- category: Music
   showcases:
   - title: All of Nothing at Once
     desc: An album created with the goal of being a cohesive whole, rather than just a collection of tracks.
@@ -89,8 +86,7 @@
     link: https://julianheuser.bandcamp.com/album/subdivide-ost
     enddate: 8/2020
     
-- category:
-  name: Other
+- category: Other
   showcases:
   - title: Frameless Labs Symposium Room Design
     desc: A virtual environment created for the 2020 Frameless Labs Symposium. My entry came in first place.
