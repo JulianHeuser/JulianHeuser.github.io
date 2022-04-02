@@ -5,9 +5,11 @@
             <div class = "section_header_spacer"></div>
             <span class = "section_textlabel">{{name}}</span>
 
-            {% if page.is_custom == false%}
-            <a class = "section_showmore">Show all</a>
-            {% endif %}
+                {% if page.is_custom == false and important_only %}
+                <a class = "section_showmore" href = "{{site.url}}/{{name}}">Show all</a>
+                {% endif %}
+
+
 
         </h2>
         <div class = "showcase_row">
@@ -19,9 +21,14 @@
             {% else %}
 
                 {% assign section_category = (site.data.showcases | where: "category", name | first)  %}
-
                 
-                {% for showcase in section_category.showcases %}
+                {% if important_only %}
+                    {% assign important_sections = (section_category.showcases | where: "important", "true")  %}
+                {% else %}
+                    {% assign important_sections = (section_category.showcases)  %}
+                {% endif %}
+
+                {% for showcase in important_sections %}
                     {% assign title = showcase.title %}
                     {% assign desc = showcase.desc %}
                     {% assign img = showcase.img %}

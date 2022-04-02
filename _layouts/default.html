@@ -12,7 +12,8 @@
             <main>
               <span id = "content">
                 {% if page.categories == "all" %}
-                  
+
+                  {% assign important_only = true %}
                   {% for category in site.data.showcases %}
 
                     {% assign name = category.category %}

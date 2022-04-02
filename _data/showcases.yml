@@ -23,6 +23,7 @@
       img: protecthim.jpg
       link: https://sockman.itch.io/protecthim
       enddate: 12/2018
+      important: false
     - title: Gravity Roll
       desc: Made in 48 hours for the GMTK Game Jam 2018.
       img: gravityroll.jpg
