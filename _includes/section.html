@@ -7,8 +7,15 @@
             <a class = "section_showmore">Show all</a>
         </h2>
         <div class = "showcase_row">
-            {% assign name = "Games" %}
-            {% include showcase.html %}
+            {% assign category = site.data.showcases | where_exp: "name", "name == '{{name}}'"  %}
+
+            {% for showcase in category.showcases %}
+                {% assign name = showcase.title %}
+                {% assign desc = showcase.desc %}
+                {% assign img = showcase.img %}
+                {% assign link = showcase.link %}
+                {% include showcase.html %}
+            {% endfor %}
         </div>
     </div>
 </div>

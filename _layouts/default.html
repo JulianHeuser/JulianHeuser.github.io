@@ -12,7 +12,7 @@
             <main>
                 {% for category in site.data.showcases %}
                   <span id = "content">
-                  {% assign name = {{category.title}} %}
+                  {% assign name = {{category.name}} %}
                   {% include section.html %}
                   <div class="box_empty"></div>
                 {% endfor %}

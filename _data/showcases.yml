@@ -1,103 +1,100 @@
-- title: Games
-  showcase_important:
+- category:
+  name: Games
+  showcases:
     - title: Restocked
-      desc: >-
-        Made in 48 hours for a game jam hosted by the RIT game dev club. The
-        theme was "Out of Stock."
-      img: images/restocked.jpg
+      desc: Made in 48 hours for a game jam hosted by the RIT game dev club. The theme was "Out of Stock."
+      img: restocked.jpg
       link: https://sockman.itch.io/restocked
       enddate: 5/2021
+      important: true
     - title: Subdivide
       desc: A retail game about dividing the world.
-      img: images/subdivide.jpg
+      img: subdivide.jpg
       link: https://store.steampowered.com/app/1292070/SubDivide
       enddate: 7/2020
+      important: true
     - title: Real Boy
       desc: Made in 72 hours for Geta Game Jam 9.
-      img: images/realboy.jpg
+      img: realboy.jpg
       link: https://sockman.itch.io/real-boy
       enddate: 8/2019
-  showcase:
+      important: true
     - title: Protect Him
       desc: Made in 72 hours for Ludum Dare 43.
-      img: images/protecthim.jpg
+      img: protecthim.jpg
       link: https://sockman.itch.io/protecthim
       enddate: 12/2018
     - title: Gravity Roll
       desc: Made in 48 hours for the GMTK Game Jam 2018.
-      img: images/gravityroll.jpg
+      img: gravityroll.jpg
       link: https://sockman.itch.io/gravity-roll
       enddate: 9/2018
     - title: Zero-G
       desc: One of my first long-term game projects.
-      img: images/zerog.jpg
+      img: zerog.jpg
       link: https://www.indiedb.com/games/zero-g
       enddate: 9/2018
-- title: Mods
-  showcase_important:
-    - title: Darkness
-      desc: 'A map created for the VR game Half-Life: Alyx.'
-      img: images/Darkness.jpg
-      link: https://steamcommunity.com/sharedfiles/filedetails/?id=2259542281
-      enddate: 11/2020
-    - title: 'Half-Life: Top Down'
-      desc: >-
-        A Mod for the 1998 game Half-Life that turns the FPS into a top-down
-        shooter.
-      img: images/halflife_topdown.jpg
-      link: https://www.moddb.com/mods/half-life-top-down
-      enddate: 3/2019
-    - title: 'Half-Life 2: Classic'
-      desc: >-
-        A "demake" that recreates 2004's Half-Life 2 inside of it's
-        predecessor.
-      img: images/halflife_classic.jpg
-      link: https://www.moddb.com/mods/half-life-2-classic
-      enddate: 11/2018
-  showcase:
-    title: 'Half-Life: Randomizer'
-    desc: >-
-      A Mod for the 1998 game Half-Life that randomizes the placement of
-      enemies, items, voice lines, and more.
-    img: images/halflife_randomizer.jpg
+
+- category:
+  name: Mods
+  showcases:
+  - title: Darkness
+    desc: 'A map created for the VR game Half-Life: Alyx.'
+    img: Darkness.jpg
+    link: https://steamcommunity.com/sharedfiles/filedetails/?id=2259542281
+    enddate: 11/2020
+    important: true
+  - title: 'Half-Life: Top Down'
+    desc: A Mod for the 1998 game Half-Life that turns the FPS into a top-down shooter.
+    img: halflife_topdown.jpg
+    link: https://www.moddb.com/mods/half-life-top-down
+    enddate: 3/2019
+    important: true
+  - title: 'Half-Life 2: Classic'
+    desc: A "demake" that recreates 2004's Half-Life 2 inside of it's predecessor.
+    img: halflife_classic.jpg
+    link: https://www.moddb.com/mods/half-life-2-classic
+    enddate: 11/2018
+    important: true
+  - title: 'Half-Life: Randomizer'
+    desc: A Mod for the 1998 game Half-Life that randomizes the placement of enemies, items, voice lines, and more.
+    img: halflife_randomizer.jpg
     link: https://www.moddb.com/mods/half-life-randomizer
     enddate: 5/2020
-- title: Music
-  showcase_important:
-    - title: All of Nothing at Once
-      desc: >-
-        An album created with the goal of being a cohesive whole, rather than
-        just a collection of tracks.
-      img: images/all_of_nothing_at_once.jpg
-      link: https://julianheuser.bandcamp.com/album/all-of-nothing-at-once
-      enddate: 2/2022
-    - '#text': S
-      title: Various Experiments
-      desc: >-
-        A number of electronic tracks made since the beginning of 2021 that
-        experiment with different sounds, styles, and textures.
-      img: images/various_experiments.jpg
-      link: https://julianheuser.bandcamp.com/album/various-experiments
-      enddate: 6/2021
-    - title: Pillars
-      desc: >-
-        An album with remasters of some older tracks along with two new
-        tracks.
-      img: images/pillars.jpg
-      link: https://julianheuser.bandcamp.com/album/pillars
-      enddate: 1/2021
-  showcase:
-    title: SubDivide Soundtrack
+
+- category:
+  name: Music
+  showcases:
+  - title: All of Nothing at Once
+    desc: An album created with the goal of being a cohesive whole, rather than just a collection of tracks.
+    img: all_of_nothing_at_once.jpg
+    link: https://julianheuser.bandcamp.com/album/all-of-nothing-at-once
+    enddate: 2/2022
+    important: true
+  - title: Various Experiments
+    desc: A number of electronic tracks made since the beginning of 2021 that experiment with different sounds, styles, and textures.
+    img: various_experiments.jpg
+    link: https://julianheuser.bandcamp.com/album/various-experiments
+    enddate: 6/2021
+    important: true
+  - title: Pillars
+    desc: An album with remasters of some older tracks along with two new tracks.
+    img: pillars.jpg
+    link: https://julianheuser.bandcamp.com/album/pillars
+    enddate: 1/2021
+    important: true
+  - title: SubDivide Soundtrack
     desc: The soundtrack composed for my game, SubDivide.
-    img: images/subdivide_soundtrack.jpg
+    img: subdivide_soundtrack.jpg
     link: https://julianheuser.bandcamp.com/album/subdivide-ost
     enddate: 8/2020
-- title: Other
-  showcase_important:
-    title: Frameless Labs Symposium Room Design
-    desc: >-
-      A virtual environment created for the 2020 Frameless Labs Symposium. My
-      entry came in first place.
-    img: images/Frameless.jpg
+    
+- category:
+  name: Other
+  showcases:
+  - title: Frameless Labs Symposium Room Design
+    desc: A virtual environment created for the 2020 Frameless Labs Symposium. My entry came in first place.
+    img: Frameless.jpg
     link: https://hubs.mozilla.com/Z67FaEm/modest-decisive-dominion
     enddate: 7/2020
+    important : true
