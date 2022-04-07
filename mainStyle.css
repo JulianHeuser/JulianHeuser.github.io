@@ -192,13 +192,15 @@ h3{
 	background-color: #062528;
 	overflow: hidden;
 	transition: .2s ease;
-	height: 2.5vw;
+	min-height: 2.5vw;
+	max-height: 5vw;
 	font-size: 1.5vw;
 	margin: 0;
 	padding-top: 0.5vw;
 }
 .showcase:hover .showcase_heading{
-	height: 0vw;
+	min-height: 0vw;
+	max-height: 0vw;
 	padding-top: 0vw;
 }
 
@@ -225,6 +227,7 @@ h3{
 	position: sticky;
 	position: -webkit-sticky;
 	top: 0;
+	bottom: 0;
 	z-index: 50;
 	box-shadow: 0 -5px 10px -5px #062528;
 	transition: box-shadow .1s ease;
