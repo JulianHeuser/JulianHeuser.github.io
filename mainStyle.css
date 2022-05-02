@@ -307,8 +307,13 @@ h3{
 	.showcase_heading{
 		font-size: 5vw;
 		height: 10vw;
-		padding-top: 2.5vw
+		padding-top: 2.5vw;
+		padding-bottom: 2.5vw;
 	}
+	.showcase:hover .showcase_heading{
+		padding-bottom: 0;
+	}
+
 	.showcase_desc{
 		font-size: 4vw;
 		margin: 0;
@@ -354,16 +359,19 @@ h3{
 		position: sticky;
 		position: -webkit-sticky;
 		top: 0;
-		/*background-color: #105A61;*/
-		/*background-image: linear-gradient(to right, #1a8e99 , #062528);*/
 		background-image: linear-gradient(to bottom, rgb(16,91,97),rgba(16,91,97,.75), rgba(16,91,97,0));
 		z-index: 3;
 		height: 10vw;
 		display: flex;
 		align-items:center;
-    justify-content:space-around;
+    	justify-content: space-around;
 		padding: 5vw;
 		font-size: 10vw;
+	}
+
+	.section_textlabel{
+		width: 100%;
+		text-align: center;
 	}
 
 	.section_header_spacer{
@@ -373,8 +381,9 @@ h3{
 
 	.section_showmore{
 		text-align: right;
-		width: 100%;
+		position: absolute;
 		font-size: 5vw;
+		width: 100%;
 	}
 
 	#nav_outer{
