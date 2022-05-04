@@ -2,7 +2,7 @@
 
   {% include header.html %}
 
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/default_layout.css">
 
   <body>
     <div id = "outer">
@@ -15,18 +15,15 @@
 
                   {% assign important_only = true %}
                   {% for category in site.data.showcases %}
-
                     {% assign name = category.category %}
                     {% include section.html %}
                     <div class="box_empty"></div>
                   {% endfor %}
 
                 {% else %}
-                 
                   {% assign name = page.categories %}
                   {% include section.html %}
-                  <div class="box_empty"></div> 
-
+                  <div class="box_empty"></div>
                 {% endif %}
 
               </span>
