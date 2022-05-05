@@ -1,7 +1,7 @@
-$base-light: #23becb;
-$base-dark: #0f555c;
-$secondary-light: #1a8e99;
-$secondary-dark: #062528;
+$primary: #1C9DA9;
+$secondary: #0D454A;
+//#0A393D
+$shadow: #0a393d;
 
 @mixin box-shadow($value){
     -webkit-box-shadow: $value;
@@ -10,11 +10,12 @@ $secondary-dark: #062528;
 }
 
 body{
-	background-color: black;
+	background-color: $primary;
 	color: white;
 	font-family: "Segoe UI", sans-serif;
-	background-image: linear-gradient(to right, $base-light, $base-dark);
 	margin: 0;
+	background-image: linear-gradient(to right, $secondary, $primary, $primary, $secondary);
+    
 }
 
 // h1 - used for page title
@@ -24,7 +25,7 @@ h1{
 	margin: 5px;
 }
 // h2 - used for section headers
-// h3 - used for showcase headings
+// h3 - used for showcase
 h3{
 	font-weight: normal;
 }
@@ -45,5 +46,9 @@ h3{
 	h2{
 		font-size: 5vw;
 		margin: 0;
+	}
+
+	body{
+        background-image: none;
 	}
 }
