@@ -33,22 +33,21 @@ h3{
 .links{
 	font-size: 20px;
 	font-weight: 400;
-}
-.links a{
-	color: white;
+	a{
+		color: white;
+	}
 }
 
 /*Mobile support*/
 @media only screen and (orientation: portrait) {
+	body{
+        background-image: none;
+	}
 	h1{
 		font-size: 15vw;
 	}
 	h2{
 		font-size: 5vw;
 		margin: 0;
-	}
-
-	body{
-        background-image: none;
 	}
 }

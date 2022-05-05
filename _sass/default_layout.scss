@@ -15,6 +15,7 @@
 	margin-bottom: 10px;
 }
 
+
 /* Boxes */
 .box_outer{
     background-color: $secondary;
@@ -31,9 +32,10 @@
 	margin-bottom: 20.75px;
 	text-align: left;
 	opacity: 1;
-}
-.box_content a:link, .box_content a:visited, .box_content a:hover, .box_content a:active{
-	color: white;
+
+    a:link, a:visited, a:hover, a:active{
+        color: white;
+    }
 }
 
 .box_empty{
@@ -41,7 +43,6 @@
 	position: relative;
 	z-index: 4;
 }
-
 
 
 /* Nav */
@@ -56,9 +57,10 @@
 	z-index: 50;
 	@include box-shadow(0 -5px 10px -5px $shadow);
 	transition: box-shadow .1s ease;
-}
-#nav_outer.pinned{
-	@include box-shadow(0 0 10px 0 $shadow);
+
+    &.pinned{
+        @include box-shadow(0 0 10px 0 $shadow);
+    }
 }
 
 .nav_button{
@@ -70,10 +72,10 @@
 	text-decoration: none;
 	font-size: 25px;
 	font-weight: normal;
-}
 
-.nav_button:hover{
-	background-color: rgba(0, 0, 0, 0.5);
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
 
 #nav_open{
@@ -89,10 +91,11 @@
 
 .footer_column{
 	min-width: 150px;
-}
-.footer_column p{
-	margin: 10px;
-	font-size: 20px;
+
+    p{
+        margin: 10px;
+        font-size: 20px;
+    }
 }
 
 /* Sections */
@@ -136,24 +139,41 @@
         height: 100%;
         bottom: 0;
     }
+
+    img{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+    }
+
+    &:hover{
+        .shadow{
+            @include box-shadow(0 0 20px 5px $shadow);
+        }
+
+        img{
+            width: 110%;
+            height: auto;
+        }
+
+        .showcase_text{
+            background-color: rgba(0,0,0,.75);
+            opacity: 1;
+        }
+
+        .showcase_heading{
+            min-height: 0vw;
+            max-height: 0vw;
+            padding-top: 0vw;
+        }
+
+        .showcase_desc{
+            opacity: 1;
+        }
+    }
 }
 
-
-.showcase:hover .shadow{
-	@include box-shadow(0 0 20px 5px $shadow);
-}
-
-.showcase img{
-	position: absolute;
-	width: 100%;
-	height: auto;
-	transition: .5s ease;
-}
-
-.showcase:hover img{
-	width: 110%;
-	height: auto;
-}
 .showcase_text{
 	position: absolute;
 	top: 0;
@@ -165,11 +185,6 @@
 	transition: .2s ease;
 	z-index: 10;
 	background-color: inherit;
-}
-
-.showcase:hover .showcase_text{
-	background-color: rgba(0,0,0,.75);
-	opacity: 1;
 }
 
 .showcase_heading{
@@ -185,19 +200,10 @@
 	padding-top: 0.5vw;
 }
 
-.showcase:hover .showcase_heading{
-	min-height: 0vw;
-	max-height: 0vw;
-	padding-top: 0vw;
-}
-
 .showcase_desc{
 	font-size: 1vw;
 	padding: 10px;
 	opacity: 0;
-}
-.showcase:hover .showcase_desc{
-	opacity: 1;
 }
 
 .showcase_row{
@@ -241,10 +247,18 @@
         .shadow {
             @include box-shadow(0 0 0 0);
         }
+
+        &:hover
+        {
+            .shadow{
+                @include box-shadow(0 0 0 0);
+            }
+            .showcase_heading{
+                padding-bottom: 0;
+            }
+        }
     }
-    .showcase:hover .shadow{
-        @include box-shadow(0 0 0 0);
-    }
+    
 
     .showcase_row{
         display: block;
@@ -259,9 +273,6 @@
         padding-top: 2.5vw;
         padding-bottom: 2.5vw;
         max-height: 20vw;
-    }
-    .showcase:hover .showcase_heading{
-        padding-bottom: 0;
     }
 
     .showcase_desc{
@@ -344,10 +355,12 @@
         width: 50vw;
         word-wrap: break-word;
         @include box-shadow(0 0 10px 0 $shadow);
+
+        &.open{
+            left: 0;
+        }
     }
-    #nav_outer.open{
-        left: 0;
-    }
+
     .nav_button{
         font-size: 10vw;
         min-width: 0;
@@ -356,6 +369,7 @@
         align-items: center;
         justify-content: center;
     }
+
     #nav_open{
         position: fixed;
         display: block;
@@ -367,68 +381,73 @@
         z-index: 51;
         transition: .2s ease;
         left: -6vw;
-    }
-    #nav_open.pinned{
-        left: 5vw;
-    }
-    #nav_open.open{
-        left: 5vw;
-    }
-    #nav_open.open span::after{
-        transform: rotate(-45deg);
-        top: 0;
-        opacity: 1  !important;
-    }
-    #nav_open.open span{
-        background: none;
-        top: 4vw;
-    }
-    #nav_open.open span::before{
-        transform: rotate(45deg);
-        top: 0;
-        opacity: 1 !important;
-    }
-    #nav_open span::before{
-        position: absolute;
-        display: block;
-        background: black;
-        border-radius: 9px;
-        width: 100%;
-        height: 2vw;
-        content: "";
-        top: 4vw;
-        transition: .2s ease;
-    }
-    #nav_open span{
-        position: absolute;
-        display: block;
-        background: black;
-        border-radius: 9px;
-        width: 100%;
-        height: 2vw;
-        content: "";
-        top: 0;
-        transition: .2s ease;
-    }
-    #nav_open span::after{
-        position: absolute;
-        display: block;
-        background: black;
-        border-radius: 9px;
-        width: 100%;
-        height: 2vw;
-        content: "";
-        top: 8vw;
-        transition: .2s ease;
+
+        span{
+            position: absolute;
+            display: block;
+            background: black;
+            border-radius: 9px;
+            width: 100%;
+            height: 2vw;
+            content: "";
+            top: 0;
+            transition: .2s ease;
+
+            &::before{
+                position: absolute;
+                display: block;
+                background: black;
+                border-radius: 9px;
+                width: 100%;
+                height: 2vw;
+                content: "";
+                top: 4vw;
+                transition: .2s ease;
+            }
+            &::after{
+                position: absolute;
+                display: block;
+                background: black;
+                border-radius: 9px;
+                width: 100%;
+                height: 2vw;
+                content: "";
+                top: 8vw;
+                transition: .2s ease;
+            }
+        }
+
+        &.pinned{
+            left: 5vw;
+        }
+        
+        &.open{
+            left: 5vw;
+            span{
+                background: none;
+                top: 4vw;
+
+                &::before{
+                    transform: rotate(45deg);
+                    top: 0;
+                    opacity: 1 !important;
+                }
+                &::after{
+                    transform: rotate(-45deg);
+                    top: 0;
+                    opacity: 1  !important;
+                }
+            }
+        }
     }
     .footer_content{
         display: flex;
     }
     .footer_column{
         min-width: 0;
-    }
-    .footer_column p{
-        margin: 10px;
-        font-size: 5vw;
+        p{
+            margin: 10px;
+            font-size: 5vw;
+        }
     }
 }
