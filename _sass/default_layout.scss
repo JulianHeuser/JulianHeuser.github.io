@@ -63,6 +63,10 @@
     }
 }
 
+#nav_inner{
+    display: contents;
+}
+
 .nav_button{
 	padding: 10px;
 	transition: background-color .2s ease;
@@ -334,34 +338,41 @@
     }
 
     .section_showmore{
-        text-align: right;
-        position: absolute;
-        font-size: 5vw;
-        width: 100%;
+        display: none;
+        /*text-align: right;
+            position: absolute;
+            font-size: 5vw;
+            width: 100%;
+        */
     }
 
     #nav_outer{
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        z-index: 50;
-        justify-content: flex-start;
-        background-image: none;
-        background-color: $secondary;
-        top: 0;
-        left: -500px;
-        transition: left .2s ease;
-        padding-top: 20vw;
-        width: 50vw;
-        word-wrap: break-word;
-        @include box-shadow(0 0 10px 0 $shadow);
-
+        position: sticky;
+        display: block;
+        overflow: visible;
+        height: 0;
         &.open{
-            left: 0;
+
+            #nav_inner{
+                max-height: 100vh;
+            }
         }
     }
 
+    #nav_inner{
+        position: absolute;
+        display: block;
+        z-index: 50;
+        background-color: $secondary;
+        top: 20vw;
+        max-height: 0;
+        height: auto;
+        overflow: hidden;
+        transition: .2s ease;
+    }
+
     .nav_button{
+        top: 20vw;
         font-size: 10vw;
         min-width: 0;
         height: 10vh;
@@ -371,12 +382,11 @@
     }
 
     #nav_open{
-        position: fixed;
+        position: sticky;
         display: block;
         pointer-events: all;
         z-index: 51;
-        top: 5vw;
-        height: 10vw;
+        top: 0;
         width: 10vw;
         z-index: 51;
         transition: .2s ease;
@@ -389,8 +399,8 @@
             border-radius: 9px;
             width: 100%;
             height: 2vw;
+            top: 5vw;
             content: "";
-            top: 0;
             transition: .2s ease;
 
             &::before{
@@ -416,25 +426,18 @@
                 transition: .2s ease;
             }
         }
-
-        &.pinned{
-            left: 5vw;
-        }
         
         &.open{
-            left: 5vw;
             span{
                 background: none;
-                top: 4vw;
-
                 &::before{
                     transform: rotate(45deg);
-                    top: 0;
+                    top: 4vw;
                     opacity: 1 !important;
                 }
                 &::after{
                     transform: rotate(-45deg);
-                    top: 0;
+                    top: 4vw;
                     opacity: 1  !important;
                 }
             }
