@@ -5,8 +5,7 @@
 //Detect if screen is scrolled past header
 var ham_open = document.getElementById("nav_open");
 var observer = new IntersectionObserver(
-  function([e]){ //ham_open.classList.toggle("pinned", e.intersectionRatio < 1);
-  document.getElementById("nav_outer").classList.toggle("pinned", e.intersectionRatio < 1);},
+  function([e]){ document.getElementById("nav_outer").classList.toggle("pinned", e.intersectionRatio < 1);},
   { threshold: [1] }
 );
-observer.observe(document.getElementsByClassName("links")[0]);
+observer.observe(document.getElementsByClassName("top-intersect-detector")[0]);
