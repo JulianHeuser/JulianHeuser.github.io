@@ -27,8 +27,8 @@
 }
 
 .box_content{
-	margin-left: 10vw;
-	margin-right: 10vw;
+	margin-left: $side-margins;
+	margin-right: $side-margins;
 	margin-bottom: 20.75px;
 	text-align: left;
 	opacity: 1;
@@ -66,8 +66,8 @@
 	display: flex;
 	justify-content: space-evenly;
     max-width: 100vw;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: $side-margins;
+    margin-right: $side-margins;
 }
 
 .nav_button{

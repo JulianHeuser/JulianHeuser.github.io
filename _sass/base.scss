@@ -1,7 +1,8 @@
 $primary: #1C9DA9;
 $secondary: #0D454A;
-//#0A393D
 $shadow: #0a393d;
+
+$side-margins: 10vw;
 
 @mixin box-shadow($value){
     -webkit-box-shadow: $value;
