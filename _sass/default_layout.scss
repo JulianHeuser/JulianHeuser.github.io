@@ -55,7 +55,7 @@
 	bottom: 0;
 	z-index: 50;
 	@include box-shadow(0 -5px 10px -5px $shadow);
-	@include transition(box-shadow);
+	transition: box-shadow .2s ease;
 
     &.pinned{
         @include box-shadow(0 0 10px 0 $shadow);
@@ -72,7 +72,7 @@
 
 .nav_button{
 	padding: 10px;
-    @include transition(background-color);
+    transition: background-color .2s ease;
 	//min-width: 128px;
     width: 100%;
 	cursor: pointer;
@@ -136,12 +136,10 @@
 	height: 12vw;
     overflow: hidden;
     @include box-shadow(0 0 10px 1px $shadow);
-    @include transition(box-shadow);
+    transition: box-shadow .2s ease, background-size .5s ease;
 
     background-size: 100%;
     background-position: center;
-    @include transition(background-size, .5s);
-
     &:hover{
 
         @include box-shadow(0 0 20px 5px $shadow);
@@ -173,7 +171,7 @@
 	right: 0;
 	text-align: center;
 	font-size: 2.5vw;
-    @include transition(background-color);
+    transition: background-color .2s ease;
 	z-index: 10;
 	background-color: inherit;
 }
@@ -188,7 +186,7 @@
 	font-size: 1.5vw;
 	margin: 0;
 	padding-top: 0.5vw;
-    @include transition(translate);
+    transition: translate .2s ease;
     transform-origin: top;
 	//transition: max-height .2s ease, min-height .2s ease, padding-top .2s ease;
 }
@@ -200,7 +198,7 @@
     right: 10px;
 	opacity: 0;
     top: 0;
-    @include transition(translate);
+    transition: translate .2s ease, opacity .2s ease;
     translate: 0 3vw;
 }
 
@@ -233,16 +231,12 @@
         margin: 0;
         text-align: center;
         box-shadow: none;
-
-        .shadow {
-            @include box-shadow(0 0 0 0);
-        }
+        height: 45vw;
+        @include box-shadow(0 0 0 0);
 
         &:hover
         {
-            .shadow{
-                @include box-shadow(0 0 0 0);
-            }
+            @include box-shadow(0 0 0 0);
             .showcase_heading{
                 padding-bottom: 0;
             }
@@ -256,6 +250,7 @@
     }
     .showcase_text{
         z-index: 2;
+        overflow: hidden;
     }
 
     .showcase_heading{
@@ -271,10 +266,6 @@
         padding: 10px;
     }
 
-    .img_container{
-        flex-shrink: 0;
-        height: 45vw;
-    }
 
     .box_content{
         margin: 0;
