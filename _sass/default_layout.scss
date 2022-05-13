@@ -244,6 +244,9 @@
 
 /*Mobile support*/
 @media only screen and (orientation: portrait) {
+    $title-height: 10vh;
+
+
     .showcase{
         display: table;
         max-width: 100vw;
@@ -318,15 +321,17 @@
         font-weight: 400;
     }
     .section_header{
+        $padding: 5vh;
+
         position: sticky;
         position: -webkit-sticky;
         top: 0;
         z-index: 3;
-        height: 10vw;
         display: flex;
         align-items:center;
         justify-content: space-around;
-        padding: 5vw;
+        padding: $padding;
+        height: $title-height - (2 * $padding);
         font-size: 10vw;
         background-color: $secondary;
     }
@@ -358,22 +363,21 @@
         &.open{
 
             #nav_inner{
-                margin-left: 0;
+                height: 100vh - $title-height;
             }
         }
     }
 
     #nav_inner{
+
         position: absolute;
         display: block;
         z-index: 50;
         background-color: $secondary;
-        top: 20vw;
-        max-height: 100vh;
-        height: auto;
+        height: 0vh;
         overflow: hidden;
         transition: .2s ease;
-        margin-left: -100%;
+        margin: $title-height 0;
     }
 
     .nav_button{
@@ -388,37 +392,39 @@
     }
 
     #nav_open{
-        $height : 8vw;
+        $height: $title-height/3;
+        $segment-height: .5vh;
+        $border-radius: 9px;
 
         position: sticky;
         display: block;
         pointer-events: all;
         z-index: 51;
         top: 0;
+        left: 5px;
         width: 10vw;
-        z-index: 51;
         transition: .2s ease;
-        left: -6vw;
 
         span{
+
+            content: "";
             position: absolute;
             display: block;
             width: 100%;
             height: $height;
-            top: 5vw;
-            content: "";
+            top: ($title-height - $height) / 2;
             transition: .2s ease;
 
             &::before{
                 position: absolute;
                 display: block;
                 background: black;
-                border-radius: 9px;
-                width: 100%;
-                height: 2vw;
+                border-radius: $border-radius;
+                width: inherit;
+                height: $segment-height;
                 content: "";
-                top: 0vw;
-                transition: .2s ease;
+                top: -($segment-height/2);
+                transition: inherit;
 
             }
             p{
@@ -426,23 +432,23 @@
                 position: absolute;
                 display: block;
                 background: black;
-                border-radius: 9px;
-                width: 100%;
-                height: 2vw;
+                border-radius: $border-radius;
+                width: inherit;
+                height: $segment-height;
                 content: "";
-                top: $height/2;
-                transition: .2s ease;
+                top: $height/2 - ($segment-height/2);
+                transition: inherit;
             }
             &::after{
                 position: absolute;
                 display: block;
                 background: black;
-                border-radius: 9px;
-                width: 100%;
-                height: 2vw;
+                border-radius: $border-radius;
+                width: inherit;
+                height: $segment-height;
                 content: "";
-                top: $height;
-                transition: .2s ease;
+                top: $height - ($segment-height/2);
+                transition: inherit;
             }
         }
         
@@ -450,7 +456,7 @@
             span{
                 &::before{
                     transform: rotate(45deg);
-                    top: 4vw;
+                    top: $height/2 - ($segment-height/2);
                     opacity: 1;
                 }
                 p{
@@ -458,7 +464,7 @@
                 }
                 &::after{
                     transform: rotate(-45deg);
-                    top: 4vw;
+                    top: $height/2 - ($segment-height/2);
                     opacity: 1;
                 }
             }
