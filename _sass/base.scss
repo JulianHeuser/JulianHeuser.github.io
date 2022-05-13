@@ -10,13 +10,19 @@ $side-margins: 10vw;
     box-shadow: $value;
 }
 
+@mixin transition($property, $time: .2s){
+    transition: $property $time ease;
+    -o-transition: $property $time ease;
+    -moz-transition: $property $time ease;
+	-webkit-transition: $property $time ease;
+}
+
 body{
 	background-color: $primary;
 	color: white;
 	font-family: "Segoe UI", sans-serif;
 	margin: 0;
 	background-image: linear-gradient(to right, $secondary, $primary, $primary, $secondary);
-    
 }
 
 // h1 - used for page title
