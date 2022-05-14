@@ -140,7 +140,7 @@
 
     background-size: 100%;
     background-position: center;
-    &:hover{
+    &:hover, &:focus-within{
 
         @include box-shadow(0 0 20px 5px $shadow);
         
