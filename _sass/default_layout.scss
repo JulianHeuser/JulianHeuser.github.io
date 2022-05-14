@@ -340,11 +340,21 @@
         z-index: 50;
         background-color: $secondary;
         width: 40vw;
-        height: 100vh - $title-height;
+        height: 100vh;
         overflow: hidden;
-        margin: $title-height 0;
+        //margin: $title-height 0;
+        margin: 0 0;
         translate: -100% 0;
         transition: translate .2s ease;
+
+        &::before{
+            content: "";
+            display:block;
+            width: 40vw;
+            height: $title-height;
+            background-color: $secondary;
+            z-index: 1;
+        }
     }
 
     .nav_button{
