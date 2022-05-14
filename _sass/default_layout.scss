@@ -369,7 +369,6 @@
         top: 0;
         left: 5px;
         width: 10vw;
-        transition: .2s ease;
 
         span{
 
@@ -379,7 +378,8 @@
             width: 100%;
             height: $height;
             top: ($title-height - $height) / 2;
-            transition: .2s ease;
+            transition: transform .2s ease;
+            user-select: none;
 
             &::before{
                 position: absolute;
@@ -403,7 +403,7 @@
                 height: $segment-height;
                 content: "";
                 top: $height/2 - ($segment-height/2);
-                transition: inherit;
+                transition: opacity .2s ease;
             }
             &::after{
                 position: absolute;
@@ -421,16 +421,14 @@
         &.open{
             span{
                 &::before{
-                    transform: rotate(45deg);
-                    top: $height/2 - ($segment-height/2);
+                    transform: translate(0, ($height/2)) rotate(45deg);
                     opacity: 1;
                 }
                 p{
                     opacity: 0;
                 }
                 &::after{
-                    transform: rotate(-45deg);
-                    top: $height/2 - ($segment-height/2);
+                    transform: translate(0, -($height/2)) rotate(-45deg);
                     opacity: 1;
                 }
             }
