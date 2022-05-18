@@ -152,13 +152,13 @@
         }
 
         .showcase_heading{
-            translate: 0 -100%;
+            transform: translate(0, -100%);
             //transform: scaleY(0);
         }
 
         .showcase_desc{
             opacity: 1;
-            translate: 0 0;
+            transform: translate(0, 0);
         }
     }
 }
@@ -186,7 +186,7 @@
 	font-size: 1.5vw;
 	margin: 0;
 	padding-top: 0.5vw;
-    transition: translate .2s ease;
+    transition: transform .2s ease;
     transform-origin: top;
 }
 
@@ -197,8 +197,8 @@
     right: 10px;
 	opacity: 0;
     top: 0;
-    transition: translate .2s ease, opacity .2s ease;
-    translate: 0 3vw;
+    transition: transform .2s ease, opacity .2s ease;
+    transform: translate(0, 3vw);
 }
 
 .showcase_row{
@@ -327,7 +327,7 @@
         &.open{
 
             #nav_inner{
-                translate: 0 0;
+                transform: translate(0, 0);
             }
         }
     }
@@ -344,8 +344,8 @@
         overflow: hidden;
         //margin: $title-height 0;
         margin: 0 0;
-        translate: -100% 0;
-        transition: translate .2s ease;
+        transform: translate(-100%, 0);
+        transition: transform .2s ease;
 
         &::before{
             content: "";
