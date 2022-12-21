@@ -1,5 +1,10 @@
 - category: Games
   showcases:
+    - title: War Room
+      desc: A horror game about war made for a game jam. The theme was "decay."
+      img: war_room.png
+      link: https://sockman.itch.io/war-room
+      enddate: 10/2022
     - title: Restocked
       desc: Made in 48 hours for a game jam hosted by the RIT game dev club. The theme was "Out of Stock."
       img: restocked.jpg
@@ -89,6 +94,12 @@
     
 - category: Other
   showcases:
+  - title: License Plate Game
+    desc: Guess if the vanity plate was accepted by the California DMV.
+    img: license_plate_game.png
+    link: https://julianheuser.github.io/ca-license-plates-game/
+    enddate: 10/2022
+    important: true
   - title: Frameless Labs Symposium Room Design
     desc: A virtual environment created for the 2020 Frameless Labs Symposium. My entry came in first place.
     img: Frameless.jpg

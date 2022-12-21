@@ -1,0 +1,6 @@
+Mastodon: https://commons.wikimedia.org/wiki/File:Mastodon_Logotype_(Simple).svg
+Linkedin: https://news.linkedin.com/content/brand/global/en_us/index/downloads
+GitHub: https://github.com/logos
+GitLab: https://about.gitlab.com/press/press-kit/
+Youtube: https://www.youtube.com/howyoutubeworks/resources/brand-resources/#logos-icons-and-colors
+Google: https://fonts.google.com/icons?icon.query=mail&icon.style=Filled&icon.platform=web&icon.set=Material+Icons

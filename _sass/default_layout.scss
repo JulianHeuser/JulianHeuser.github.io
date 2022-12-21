@@ -105,6 +105,20 @@
         font-size: 20px;
     }
 }
+.footer_column img{
+    height: 100px;
+}
+
+.footer_socials{
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content:space-around;
+}
+.footer_socials img{
+    height: 3vw;
+    padding: 5px;
+}
 
 /* Sections */
 .section_header{
@@ -454,4 +468,11 @@
             font-size: 5vw;
         }
     }
+
+    .footer_socials{
+        width: 75%;
+    }
+    .footer_socials img{
+        height: 8vw;
+    }    
 }
